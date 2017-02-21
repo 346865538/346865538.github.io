@@ -301,6 +301,979 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/06php运算符/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/06php运算符/" itemprop="url">
+                  php运算符
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T21:22:49+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/06php运算符/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/06php运算符/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-字符串运算符"><a href="#1-字符串运算符" class="headerlink" title="1.字符串运算符"></a>1.字符串运算符</h1><p>“.” 拼接字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = &quot;hello&quot;;</div><div class="line">	$b = &quot;world&quot;;</div><div class="line">	echo $sum = $a.$b;   // helloworld</div><div class="line">	</div><div class="line">	$a = &quot;hello&quot;;</div><div class="line">	$a.= &quot;world&quot;;</div><div class="line">	echo $a;   // $a = $a.&quot;world&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="2-自增"><a href="#2-自增" class="headerlink" title="2.自增"></a>2.自增</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = 0;</div><div class="line">	$a++;</div><div class="line">	echo $a;   // 1</div><div class="line"></div><div class="line">	$a = 10;</div><div class="line">	$b = 20;</div><div class="line">	// &lt;&gt; 不等于</div><div class="line">	echo $a &lt;&gt; $b;   // 1</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-三元运算符"><a href="#3-三元运算符" class="headerlink" title="3.三元运算符"></a>3.三元运算符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = 20;</div><div class="line">	$b = 10;</div><div class="line">	$res = $a&gt;$b?&quot;大于&quot;:&quot;小于&quot;; </div><div class="line">	echo $res;   // 大于</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="4-if语句"><a href="#4-if语句" class="headerlink" title="4.if语句"></a>4.if语句</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	if($a&gt;$b)&#123;   // $a = 20   $b = 10</div><div class="line">		echo &quot;a 大于 b&quot;;</div><div class="line">	&#125;else&#123;</div><div class="line">		echo &quot;a 不大于 b&quot;;</div><div class="line">	&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="5-switch"><a href="#5-switch" class="headerlink" title="5.switch"></a>5.switch</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$b = &quot;周伯君&quot;;</div><div class="line">	switch($b)&#123;</div><div class="line">		case &quot;周伯君&quot;:</div><div class="line">			echo &quot;新年博&quot;;</div><div class="line">			break;</div><div class="line">		case &quot;新年博&quot;;</div><div class="line">			echo &quot;业者徐&quot;;</div><div class="line">			break;</div><div class="line">		default:</div><div class="line">			break;</div><div class="line">	&#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="6-while"><a href="#6-while" class="headerlink" title="6.while"></a>6.while</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$i = 0;</div><div class="line">	$a = 0;</div><div class="line">	while ($i &lt; 10) &#123;</div><div class="line">		$i++;</div><div class="line">		$a+=$i;</div><div class="line">	&#125;</div><div class="line">	echo $a;    // 1~10累加 = 55 </div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="7-do-while"><a href="#7-do-while" class="headerlink" title="7.do while"></a>7.do while</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$i = 0;</div><div class="line">	do&#123;</div><div class="line">		$sum += $i;</div><div class="line">		$i++;</div><div class="line">	&#125;while($i&lt;=10);</div><div class="line">	echo $sum;   // 1~10累加 = 55 </div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="8-for"><a href="#8-for" class="headerlink" title="8.for"></a>8.for</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$i = 0;</div><div class="line">	$sum = 0;</div><div class="line">	for($i = 0; $i &lt;= 10; $i++)&#123;</div><div class="line">		$sum += $i;</div><div class="line">	&#125;</div><div class="line">	echo $sum;   // 1~10累加 = 55 </div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/05php函数/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/05php函数/" itemprop="url">
+                  php函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T21:10:22+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/05php函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/05php函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-自定义函数"><a href="#1-自定义函数" class="headerlink" title="1.自定义函数"></a>1.自定义函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	function show()&#123;</div><div class="line">		echo &quot;我是一个div&quot;;</div><div class="line">	&#125;</div><div class="line">	show();   // 我是一个div</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="2-参数需要加-值传递"><a href="#2-参数需要加-值传递" class="headerlink" title="2.参数需要加$   值传递"></a>2.参数需要加$   值传递</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	function add($a,$b)&#123;</div><div class="line">		echo $a+$b;</div><div class="line">	&#125;</div><div class="line">	add(3,4);   // 3 + 4 = 7</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-引用传递-参数的传址"><a href="#3-引用传递-参数的传址" class="headerlink" title="3.引用传递 参数的传址"></a>3.引用传递 参数的传址</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$c = 5;</div><div class="line">	function add2($a,&amp;$b)&#123;</div><div class="line">		echo $a+$b;</div><div class="line">		$b = 10;</div><div class="line">	&#125;</div><div class="line">	add(2,$c);   // 2 + 5 = 7</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	echo $c;   // 5</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	</div><div class="line">	function defaults($h,$play=&quot;桌游&quot;)&#123;</div><div class="line">		echo &quot;我们周六拓展想要玩&#123;$play&#125;，玩&#123;$h&#125;小时&quot;;</div><div class="line">	&#125;</div><div class="line">	defaults(10);   //我们周六拓展想要玩桌游，玩10小时</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	defaults(10,&quot;篮球&quot;);   //我们周六拓展想要玩篮球，玩10小时</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="4-递归函数"><a href="#4-递归函数" class="headerlink" title="4.递归函数"></a>4.递归函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$i = 0;		// 全局变量</div><div class="line">	function digui($i)&#123;</div><div class="line">		$i++;	// 局部变量</div><div class="line">		if($i&gt;20)&#123;</div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line">		echo $i;</div><div class="line">		digui($i);</div><div class="line">	&#125;</div><div class="line">	digui($i);   // 1234567891011121314151617181920</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="5-php变量分为3种"><a href="#5-php变量分为3种" class="headerlink" title="5.php变量分为3种"></a>5.php变量分为3种</h1><p>全局变量 局部变量 静态变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = 10;</div><div class="line">	$b = 15;</div><div class="line">	function add3()&#123;</div><div class="line">		// echo $GLOBALS[&quot;a&quot;] + $GLOBALS[&quot;b&quot;];</div><div class="line">		global $a,$b;   // 获取全局变量$a和$b</div><div class="line">		echo $a+$b;   </div><div class="line">	&#125;</div><div class="line">	add3();   // 10 + 15 = 25</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line"></div><div class="line">	function fn()&#123;</div><div class="line">		static $i = 0;</div><div class="line">		echo $i;</div><div class="line">		$i++;</div><div class="line">	&#125;</div><div class="line">	fn();   // 0</div><div class="line">	fn();   // 1</div><div class="line">	fn();   // 2</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/04php数据类型/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/04php数据类型/" itemprop="url">
+                  php数据类型
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T21:00:12+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/04php数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/04php数据类型/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-数据类型-js-6种-php-8种"><a href="#1-数据类型-js-6种-php-8种" class="headerlink" title="1.数据类型   js 6种  php 8种"></a>1.数据类型   js 6种  php 8种</h1><p>类型分为 ：<br>    4种标量数据类型  字符串String 布尔Boolean 整型Integer 浮点型Float<br>    2种复杂数据类型  数组Array  对象Object<br>    2种特殊数据类型  资源Resource和 NULL; </p>
+<hr>
+<h1 id="2-整型-整数"><a href="#2-整型-整数" class="headerlink" title="2.整型(整数)"></a>2.整型(整数)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$num = 10;</div><div class="line">	$num = -10;</div><div class="line">	$num = 011;   // 八进制</div><div class="line">	$num = 0x11;  // 十六进制</div><div class="line">	$num = 7e10;  // 科学计数法</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-浮点型-小数"><a href="#3-浮点型-小数" class="headerlink" title="3.浮点型(小数);"></a>3.浮点型(小数);</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$num = 3.3e-4;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="4-布尔-true-false"><a href="#4-布尔-true-false" class="headerlink" title="4.布尔 (true,false)"></a>4.布尔 (true,false)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	echo true;  //1</div><div class="line">	echo false;  //什么也不输出</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="5-字符串"><a href="#5-字符串" class="headerlink" title="5.字符串()"></a>5.字符串()</h1><p>定义字符串有三种 单引号 双引号 定界符<br>单引号不能解析变量以及特殊字符<br>双引号是可以解析变量以及特殊字符的;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = &quot;zhangsan&quot;;   // zhangsan</div><div class="line">	$str = &quot;hel\nlo $a&quot;;   // hel lo zhangsan</div><div class="line">	$str2 = &quot;hel\nlo $a &#123;$a&#125;bc&quot;;   // hel lo zhangsan zhangsanbc</div><div class="line">	$lanou = &quot;蓝欧&quot;;   // 蓝欧</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="5-1-定界符之heredoc"><a href="#5-1-定界符之heredoc" class="headerlink" title="5.1 定界符之heredoc"></a>5.1 定界符之heredoc</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$str =  &lt;&lt;&lt;EOF</div><div class="line">	nihao zhangsan,</div><div class="line">	welcome to $lanou</div><div class="line">EOF;</div><div class="line">	echo $str;   // nihao zhangsan, welcome to 蓝欧</div><div class="line">	</div><div class="line">	$str = &lt;&lt;&lt;EOF</div><div class="line">	&lt;div&gt;</div><div class="line">		&lt;h1&gt;</div><div class="line">			&lt;a href=&quot;http://www.baidu.com&quot;&gt;链接&lt;/a&gt;</div><div class="line">		&lt;/h1&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">EOF;</div><div class="line">	echo $str;   // 一个a标签地址为www.baidu.com</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="6-数组-Array"><a href="#6-数组-Array" class="headerlink" title="6.数组(Array)"></a>6.数组(Array)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$arr = array(1,3,4,5);</div><div class="line">	var_dump($arr);   //array(4) &#123; [0]=&gt; int(1) [1]=&gt; int(3) [2]=&gt; int(4) [3]=&gt; int(5) &#125;</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="7-对象-Object"><a href="#7-对象-Object" class="headerlink" title="7.对象(Object)"></a>7.对象(Object)</h1><p>可以通过类的实例化或者强制转换创建</p>
+<h1 id="8-资源"><a href="#8-资源" class="headerlink" title="8.资源"></a>8.资源</h1><p>可以通过读取文件之类的操作获得<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$fh = open(&quot;text.txt&quot;,&quot;w&quot;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="9-NULL"><a href="#9-NULL" class="headerlink" title="9.NULL"></a>9.NULL</h1><p>直接赋值为 null; 未定义的为空的； unset()移除之后的量是null</p>
+<hr>
+<h1 id="10-类型转换-隐式类型转换"><a href="#10-类型转换-隐式类型转换" class="headerlink" title="10.类型转换 隐式类型转换"></a>10.类型转换 隐式类型转换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$num = 10;</div><div class="line">	$str = &quot;10&quot;;</div><div class="line">	echo $num+$str;   // 20</div><div class="line">	// &quot;+&quot;只能进行数值运算  只保留数字 去掉字符串</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	</div><div class="line">	if(3) &#123;   // true</div><div class="line">		echo &quot;条件成立&quot;;	</div><div class="line">	&#125;</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	</div><div class="line">	$num = 3.21;</div><div class="line">	// gettype 获取变量的类型</div><div class="line">	echo gettype($num);   // doublue</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;</div><div class="line">	</div><div class="line">	$str = &quot;sdfd&quot;;</div><div class="line">	// is_string 判断变量是否是字符串</div><div class="line">	echo is_string($str);   // 1</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/03php常量/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/03php常量/" itemprop="url">
+                  php常量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T20:58:29+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/03php常量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/03php常量/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-常量"><a href="#1-常量" class="headerlink" title="1.常量"></a>1.常量</h1><p>敞亮是一个一经定义就无法改变的量<br>常量的定义方法抵用define();<br>常量对大小写敏感<br>输出时不加$<br>值只能是数值 字符串 布尔</p>
+<hr>
+<h1 id="2-定义一个常量"><a href="#2-定义一个常量" class="headerlink" title="2.定义一个常量"></a>2.定义一个常量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	define(常量名,常量值);</div><div class="line">	define(&quot;PI&quot;,3.1415926);</div><div class="line">	echo PI;   // 3.1415926</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-内置的常量"><a href="#3-内置的常量" class="headerlink" title="3.内置的常量"></a>3.内置的常量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	echo PHP_OS;</div><div class="line">	echo PHP_VERSION;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="4-魔术常量-根据所在位置的不同-返回不同的值"><a href="#4-魔术常量-根据所在位置的不同-返回不同的值" class="headerlink" title="4.魔术常量 根据所在位置的不同 返回不同的值"></a>4.魔术常量 根据所在位置的不同 返回不同的值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	echo __LINE__;</div><div class="line">	echo __FILE__;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/02php变量/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/02php变量/" itemprop="url">
+                  php变量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T20:43:45+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/02php变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/02php变量/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-变量"><a href="#1-变量" class="headerlink" title="1.变量"></a>1.变量</h1><p>变量申明符号是$<br>变量名由字母、数字、下划线组成<br>区分大小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = 10;</div><div class="line">	echo $a;   // 10</div><div class="line">	</div><div class="line">	$b = &quot;hello world&quot;;</div><div class="line">	echo $b;   // hello world</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="2-传值"><a href="#2-传值" class="headerlink" title="2.传值"></a>2.传值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$b = $a;</div><div class="line">	$a = 10;</div><div class="line">	$b = $a;</div><div class="line">	echo $a,$b;   // 1010</div><div class="line">	</div><div class="line">	$b = 20;</div><div class="line">	echo $a,$b;   // 1020</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="3-传址-即引用赋值-b-amp-a"><a href="#3-传址-即引用赋值-b-amp-a" class="headerlink" title="3.传址   即引用赋值  $b = &amp;$a;"></a>3.传址   即引用赋值  $b = &amp;$a;</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = 10;</div><div class="line">	$b = &amp;$a;</div><div class="line">	$b = 20;</div><div class="line">	echo $a,$b;   // 2020</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-1变量的变量-可变的变量"><a href="#3-1变量的变量-可变的变量" class="headerlink" title="3.1变量的变量  (可变的变量)"></a>3.1变量的变量  (可变的变量)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$a = &quot;hello&quot;;   // 变量a的值为 hello</div><div class="line">	$$a = &quot;world&quot;;   // 变量a的值(即hello)的值为 world</div><div class="line">	echo $hello;   // 打印hello的值(即打印a的值的值)   输出 world</div><div class="line">	</div><div class="line">	$a = &quot;hello&quot;;</div><div class="line">	$hello = &quot;world&quot;;</div><div class="line">	echo $$a;   // 同上   输出 world</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="4-预定义变量"><a href="#4-预定义变量" class="headerlink" title="4.预定义变量"></a>4.预定义变量</h1><p>php中有很多预定义变量 有一些在任何地方都可以进行访问 这就叫做超全局变量 基本都是数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	// $_SERVER 包含了服务器与执行环境的一些信息</div><div class="line">	// var_dump 输出任何类型的数据，以及他们的数据类型和数据长度</div><div class="line">	var_dump($_SERVER);   // 输出 服务器与执行环境的信息</div><div class="line">	</div><div class="line">	// 检查浏览页面的访问者在用什么操作系统（包括版本号）浏览器（包括版本号）和用户个人偏好的代码</div><div class="line">	echo $_SERVER[&quot;HTTP_USER_AGENT&quot;];</div><div class="line">	</div><div class="line">	// $_GET 获得通过get方式传送的数据</div><div class="line">	// $_POST 获得post方式传输的数据</div><div class="line">	// $_REQUEST 既能获得GET方式也能获得POST方式传输的数据</div><div class="line">	</div><div class="line">	//	 var_dump($_GET);</div><div class="line">	</div><div class="line">	$a = 5;</div><div class="line">	$b = 15;</div><div class="line">	//	var_dump($GLOBALS);</div><div class="line">	//	echo $GLOBALS[&quot;a&quot;] + $GLOBALS[&quot;b&quot;];</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/01初识php/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/21/01初识php/" itemprop="url">
+                  初识php
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T20:20:37+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/21/01初识php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/01初识php/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-php标记"><a href="#1-php标记" class="headerlink" title="1.php标记"></a>1.php标记</h1><p>所有的PHP代码就写在这里<br>单行注释包括’//‘,’#’,多行注释’/**/‘<br>php必须在指令末尾加上分号<br>对大小写敏感<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="2-echo"><a href="#2-echo" class="headerlink" title="2.echo"></a>2.echo</h1><p>输出一个或多个字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	echo &quot;hello world&quot;;           // hello world</div><div class="line">	echo &quot;&lt;br/&gt;&quot;;                 // 换行</div><div class="line">	echo &quot;&lt;h1&gt;我是一级标题&lt;/h1&gt;&quot;;     // &lt;h1&gt;我是一级标题&lt;/h1&gt;</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/php数组/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -434,160 +1407,6 @@
 <hr>
 <h1 id="反转"><a href="#反转" class="headerlink" title="反转"></a>反转</h1><p>echo strrev($str); </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 识别换行符等</div><div class="line">echo nl2br($str);</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/代码高亮/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Vipcw">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Vipcw's Home">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/20/代码高亮/" itemprop="url">
-                  代码高亮
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T16:49:53+08:00">
-                2017-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端开发/" itemprop="url" rel="index">
-                    <span itemprop="name">前端开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/20/代码高亮/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/代码高亮/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>test1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fjksdl;jfklsdj</div></pre></td></tr></table></figure></p>
-<p>test2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2312312312312</div></pre></td></tr></table></figure>
           
         
       
@@ -969,7 +1788,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

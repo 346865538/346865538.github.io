@@ -3,16 +3,51 @@
   
     
     <entry>
-      <title><![CDATA[PHP数组]]></title>
-      <url>%2F2017%2F02%2F21%2Fphp%E6%95%B0%E7%BB%84%2F</url>
-      <content type="text"><![CDATA[查找与替换 strpos(要操作的字符串，要查找的字符) 字符查找 返回查找字符第一次出现的位置stripos 不区分大小写替换 123$str = &quot;hello world&quot;;echo strpos($str,&quot;W&quot;);echo stripos($str,&quot;W&quot;); 替换str_replace(“匹配内容”,”替换的内容”,字符串) 替换字符串的匹配内容str_ireplace 不区分大小写替换 12$str = str_ireplace(&quot;l&quot;,&quot;7&quot;,$str);echo $str; 截取字符串substr(字符串，起始位置，截取长度) 1234$str = substr($str,3);$str = substr($str,3,7); $str = substr($str,-4,3);echo $str; 按字符串截取$str = strstr(字符串，开始截取的字符串) 123$str = strstr($str,&quot;ll&quot;);0$str = stristr($str,&quot;ll&quot;);echo $str; ltrim rtrim trim 截取 12345678910$str = &quot; hello &quot;;echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = ltrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = rtrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;$str = trim($str);echo &quot;(&quot;.$str.&quot;)&quot;; 字符串长度12$str = &quot;wwwwwwww&quot;;echo strlen($str); 转换字母大小写$str = “ab\ncd”; 12echo strtolower($str); // 小写echo strtoupper($str); // 大写 反转echo strrev($str); 12# 识别换行符等echo nl2br($str);]]></content>
+      <title><![CDATA[php运算符]]></title>
+      <url>%2F2017%2F02%2F21%2F06php%E8%BF%90%E7%AE%97%E7%AC%A6%2F</url>
+      <content type="text"><![CDATA[1.字符串运算符“.” 拼接字符串123456789&lt;?php $a = &quot;hello&quot;; $b = &quot;world&quot;; echo $sum = $a.$b; // helloworld $a = &quot;hello&quot;; $a.= &quot;world&quot;; echo $a; // $a = $a.&quot;world&quot;;?&gt; 2.自增12345678910&lt;?php $a = 0; $a++; echo $a; // 1 $a = 10; $b = 20; // &lt;&gt; 不等于 echo $a &lt;&gt; $b; // 1?&gt; 3.三元运算符123456&lt;?php $a = 20; $b = 10; $res = $a&gt;$b?&quot;大于&quot;:&quot;小于&quot;; echo $res; // 大于?&gt; 4.if语句1234567&lt;?php if($a&gt;$b)&#123; // $a = 20 $b = 10 echo &quot;a 大于 b&quot;; &#125;else&#123; echo &quot;a 不大于 b&quot;; &#125;?&gt; 5.switch12345678910111213&lt;?php $b = &quot;周伯君&quot;; switch($b)&#123; case &quot;周伯君&quot;: echo &quot;新年博&quot;; break; case &quot;新年博&quot;; echo &quot;业者徐&quot;; break; default: break; &#125;?&gt; 6.while123456789&lt;?php $i = 0; $a = 0; while ($i &lt; 10) &#123; $i++; $a+=$i; &#125; echo $a; // 1~10累加 = 55 ?&gt; 7.do while12345678&lt;?php $i = 0; do&#123; $sum += $i; $i++; &#125;while($i&lt;=10); echo $sum; // 1~10累加 = 55 ?&gt; 8.for12345678&lt;?php $i = 0; $sum = 0; for($i = 0; $i &lt;= 10; $i++)&#123; $sum += $i; &#125; echo $sum; // 1~10累加 = 55 ?&gt;]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[代码高亮]]></title>
-      <url>%2F2017%2F02%2F20%2F%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%2F</url>
-      <content type="text"><![CDATA[test11fjksdl;jfklsdj test2 12312312312312]]></content>
+      <title><![CDATA[php函数]]></title>
+      <url>%2F2017%2F02%2F21%2F05php%E5%87%BD%E6%95%B0%2F</url>
+      <content type="text"><![CDATA[1.自定义函数1234567&lt;?php function show()&#123; echo &quot;我是一个div&quot;; &#125; show(); // 我是一个div echo &quot;&lt;br/&gt;&quot;;?&gt; 2.参数需要加$ 值传递1234567&lt;?php function add($a,$b)&#123; echo $a+$b; &#125; add(3,4); // 3 + 4 = 7 echo &quot;&lt;br/&gt;&quot;;?&gt; 3.引用传递 参数的传址12345678910111213141516171819&lt;?php $c = 5; function add2($a,&amp;$b)&#123; echo $a+$b; $b = 10; &#125; add(2,$c); // 2 + 5 = 7 echo &quot;&lt;br/&gt;&quot;; echo $c; // 5 echo &quot;&lt;br/&gt;&quot;; function defaults($h,$play=&quot;桌游&quot;)&#123; echo &quot;我们周六拓展想要玩&#123;$play&#125;，玩&#123;$h&#125;小时&quot;; &#125; defaults(10); //我们周六拓展想要玩桌游，玩10小时 echo &quot;&lt;br/&gt;&quot;; defaults(10,&quot;篮球&quot;); //我们周六拓展想要玩篮球，玩10小时 echo &quot;&lt;br/&gt;&quot;;?&gt; 4.递归函数12345678910111213&lt;?php $i = 0; // 全局变量 function digui($i)&#123; $i++; // 局部变量 if($i&gt;20)&#123; return; &#125; echo $i; digui($i); &#125; digui($i); // 1234567891011121314151617181920 echo &quot;&lt;br/&gt;&quot;;?&gt; 5.php变量分为3种全局变量 局部变量 静态变量1234567891011121314151617181920&lt;?php $a = 10; $b = 15; function add3()&#123; // echo $GLOBALS[&quot;a&quot;] + $GLOBALS[&quot;b&quot;]; global $a,$b; // 获取全局变量$a和$b echo $a+$b; &#125; add3(); // 10 + 15 = 25 echo &quot;&lt;br/&gt;&quot;; function fn()&#123; static $i = 0; echo $i; $i++; &#125; fn(); // 0 fn(); // 1 fn(); // 2?&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[php数据类型]]></title>
+      <url>%2F2017%2F02%2F21%2F04php%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+      <content type="text"><![CDATA[1.数据类型 js 6种 php 8种类型分为 ： 4种标量数据类型 字符串String 布尔Boolean 整型Integer 浮点型Float 2种复杂数据类型 数组Array 对象Object 2种特殊数据类型 资源Resource和 NULL; 2.整型(整数)1234567&lt;?php $num = 10; $num = -10; $num = 011; // 八进制 $num = 0x11; // 十六进制 $num = 7e10; // 科学计数法?&gt; 3.浮点型(小数);123&lt;?php $num = 3.3e-4;?&gt; 4.布尔 (true,false)1234&lt;?php echo true; //1 echo false; //什么也不输出?&gt; 5.字符串()定义字符串有三种 单引号 双引号 定界符单引号不能解析变量以及特殊字符双引号是可以解析变量以及特殊字符的;123456&lt;?php $a = &quot;zhangsan&quot;; // zhangsan $str = &quot;hel\nlo $a&quot;; // hel lo zhangsan $str2 = &quot;hel\nlo $a &#123;$a&#125;bc&quot;; // hel lo zhangsan zhangsanbc $lanou = &quot;蓝欧&quot;; // 蓝欧?&gt; 5.1 定界符之heredoc12345678910111213141516&lt;?php $str = &lt;&lt;&lt;EOF nihao zhangsan, welcome to $lanouEOF; echo $str; // nihao zhangsan, welcome to 蓝欧 $str = &lt;&lt;&lt;EOF &lt;div&gt; &lt;h1&gt; &lt;a href=&quot;http://www.baidu.com&quot;&gt;链接&lt;/a&gt; &lt;/h1&gt; &lt;/div&gt;EOF; echo $str; // 一个a标签地址为www.baidu.com?&gt; 6.数组(Array)12345&lt;?php $arr = array(1,3,4,5); var_dump($arr); //array(4) &#123; [0]=&gt; int(1) [1]=&gt; int(3) [2]=&gt; int(4) [3]=&gt; int(5) &#125; echo &quot;&lt;br/&gt;&quot;;?&gt; 7.对象(Object)可以通过类的实例化或者强制转换创建 8.资源可以通过读取文件之类的操作获得123&lt;?php $fh = open(&quot;text.txt&quot;,&quot;w&quot;);?&gt; 9.NULL直接赋值为 null; 未定义的为空的； unset()移除之后的量是null 10.类型转换 隐式类型转换123456789101112131415161718192021&lt;?php $num = 10; $str = &quot;10&quot;; echo $num+$str; // 20 // &quot;+&quot;只能进行数值运算 只保留数字 去掉字符串 echo &quot;&lt;br/&gt;&quot;; if(3) &#123; // true echo &quot;条件成立&quot;; &#125; echo &quot;&lt;br/&gt;&quot;; $num = 3.21; // gettype 获取变量的类型 echo gettype($num); // doublue echo &quot;&lt;br/&gt;&quot;; $str = &quot;sdfd&quot;; // is_string 判断变量是否是字符串 echo is_string($str); // 1?&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[php常量]]></title>
+      <url>%2F2017%2F02%2F21%2F03php%E5%B8%B8%E9%87%8F%2F</url>
+      <content type="text"><![CDATA[1.常量敞亮是一个一经定义就无法改变的量常量的定义方法抵用define();常量对大小写敏感输出时不加$值只能是数值 字符串 布尔 2.定义一个常量12345&lt;?php define(常量名,常量值); define(&quot;PI&quot;,3.1415926); echo PI; // 3.1415926?&gt; 3.内置的常量1234&lt;?php echo PHP_OS; echo PHP_VERSION;?&gt; 4.魔术常量 根据所在位置的不同 返回不同的值1234&lt;?php echo __LINE__; echo __FILE__;?&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[php变量]]></title>
+      <url>%2F2017%2F02%2F21%2F02php%E5%8F%98%E9%87%8F%2F</url>
+      <content type="text"><![CDATA[1.变量变量申明符号是$变量名由字母、数字、下划线组成区分大小写1234567&lt;?php $a = 10; echo $a; // 10 $b = &quot;hello world&quot;; echo $b; // hello world?&gt; 2.传值123456789&lt;?php $b = $a; $a = 10; $b = $a; echo $a,$b; // 1010 $b = 20; echo $a,$b; // 1020?&gt; 3.传址 即引用赋值 $b = &amp;$a;123456&lt;?php $a = 10; $b = &amp;$a; $b = 20; echo $a,$b; // 2020?&gt; 3.1变量的变量 (可变的变量)123456789&lt;?php $a = &quot;hello&quot;; // 变量a的值为 hello $$a = &quot;world&quot;; // 变量a的值(即hello)的值为 world echo $hello; // 打印hello的值(即打印a的值的值) 输出 world $a = &quot;hello&quot;; $hello = &quot;world&quot;; echo $$a; // 同上 输出 world?&gt; 4.预定义变量php中有很多预定义变量 有一些在任何地方都可以进行访问 这就叫做超全局变量 基本都是数组12345678910111213141516171819&lt;?php // $_SERVER 包含了服务器与执行环境的一些信息 // var_dump 输出任何类型的数据，以及他们的数据类型和数据长度 var_dump($_SERVER); // 输出 服务器与执行环境的信息 // 检查浏览页面的访问者在用什么操作系统（包括版本号）浏览器（包括版本号）和用户个人偏好的代码 echo $_SERVER[&quot;HTTP_USER_AGENT&quot;]; // $_GET 获得通过get方式传送的数据 // $_POST 获得post方式传输的数据 // $_REQUEST 既能获得GET方式也能获得POST方式传输的数据 // var_dump($_GET); $a = 5; $b = 15; // var_dump($GLOBALS); // echo $GLOBALS[&quot;a&quot;] + $GLOBALS[&quot;b&quot;];?&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[初识php]]></title>
+      <url>%2F2017%2F02%2F21%2F01%E5%88%9D%E8%AF%86php%2F</url>
+      <content type="text"><![CDATA[1.php标记所有的PHP代码就写在这里单行注释包括’//‘,’#’,多行注释’/**/‘php必须在指令末尾加上分号对大小写敏感123&lt;?php ?&gt; 2.echo输出一个或多个字符串12345&lt;?php echo &quot;hello world&quot;; // hello world echo &quot;&lt;br/&gt;&quot;; // 换行 echo &quot;&lt;h1&gt;我是一级标题&lt;/h1&gt;&quot;; // &lt;h1&gt;我是一级标题&lt;/h1&gt;?&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[PHP数组]]></title>
+      <url>%2F2017%2F02%2F21%2Fphp%E6%95%B0%E7%BB%84%2F</url>
+      <content type="text"><![CDATA[查找与替换 strpos(要操作的字符串，要查找的字符) 字符查找 返回查找字符第一次出现的位置stripos 不区分大小写替换 123$str = &quot;hello world&quot;;echo strpos($str,&quot;W&quot;);echo stripos($str,&quot;W&quot;); 替换str_replace(“匹配内容”,”替换的内容”,字符串) 替换字符串的匹配内容str_ireplace 不区分大小写替换 12$str = str_ireplace(&quot;l&quot;,&quot;7&quot;,$str);echo $str; 截取字符串substr(字符串，起始位置，截取长度) 1234$str = substr($str,3);$str = substr($str,3,7); $str = substr($str,-4,3);echo $str; 按字符串截取$str = strstr(字符串，开始截取的字符串) 123$str = strstr($str,&quot;ll&quot;);0$str = stristr($str,&quot;ll&quot;);echo $str; ltrim rtrim trim 截取 12345678910$str = &quot; hello &quot;;echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = ltrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = rtrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;$str = trim($str);echo &quot;(&quot;.$str.&quot;)&quot;; 字符串长度12$str = &quot;wwwwwwww&quot;;echo strlen($str); 转换字母大小写$str = “ab\ncd”; 12echo strtolower($str); // 小写echo strtoupper($str); // 大写 反转echo strrev($str); 12# 识别换行符等echo nl2br($str);]]></content>
     </entry>
 
     
