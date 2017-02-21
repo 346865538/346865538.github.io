@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[PHP数组]]></title>
+      <url>%2F2017%2F02%2F21%2Fphp%E6%95%B0%E7%BB%84%2F</url>
+      <content type="text"><![CDATA[查找与替换 strpos(要操作的字符串，要查找的字符) 字符查找 返回查找字符第一次出现的位置stripos 不区分大小写替换 123$str = &quot;hello world&quot;;echo strpos($str,&quot;W&quot;);echo stripos($str,&quot;W&quot;); 替换str_replace(“匹配内容”,”替换的内容”,字符串) 替换字符串的匹配内容str_ireplace 不区分大小写替换 12$str = str_ireplace(&quot;l&quot;,&quot;7&quot;,$str);echo $str; 截取字符串substr(字符串，起始位置，截取长度) 1234$str = substr($str,3);$str = substr($str,3,7); $str = substr($str,-4,3);echo $str; 按字符串截取$str = strstr(字符串，开始截取的字符串) 123$str = strstr($str,&quot;ll&quot;);0$str = stristr($str,&quot;ll&quot;);echo $str; ltrim rtrim trim 截取 12345678910$str = &quot; hello &quot;;echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = ltrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;echo &quot;&lt;br/&gt;&quot;;$str = rtrim($str);echo &quot;(&quot;.$str.&quot;)&quot;;$str = trim($str);echo &quot;(&quot;.$str.&quot;)&quot;; 字符串长度12$str = &quot;wwwwwwww&quot;;echo strlen($str); 转换字母大小写$str = “ab\ncd”; 12echo strtolower($str); // 小写echo strtoupper($str); // 大写 反转echo strrev($str); 12# 识别换行符等echo nl2br($str);]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[代码高亮]]></title>
       <url>%2F2017%2F02%2F20%2F%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%2F</url>
       <content type="text"><![CDATA[test11fjksdl;jfklsdj test2 12312312312312]]></content>
