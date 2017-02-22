@@ -301,6 +301,362 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/08php数组/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/22/08php数组/" itemprop="url">
+                  php数组
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T19:09:36+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/22/08php数组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/08php数组/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>申明数组 array()<br>键可以由数值或者字符串组成<br>键是数值的数组称为索引数组<br>键是字符串的称为关联数组<br>数组的值获取通过 [] 内部是索引</p>
+<h1 id="1-创建方式"><a href="#1-创建方式" class="headerlink" title="1.创建方式"></a>1.创建方式</h1><h2 id="array-创建"><a href="#array-创建" class="headerlink" title="array()创建"></a>array()创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$fruit = array(&apos;apple&apos;,&apos;orange&apos;,&apos;banana&apos;);</div><div class="line">	$fruit[] = &quot;pear&quot;;</div><div class="line">	var_dump($fruit);   </div><div class="line">	// array(4) &#123; [0]=&gt; string(5) &quot;apple&quot; [1]=&gt; string(6) &quot;orange&quot; [2]=&gt; string(6) &quot;banana&quot; [3]=&gt; string(4) &quot;pear&quot; &#125;</div><div class="line"></div><div class="line">	var_dump($fruit[&quot;1&quot;].&quot;&lt;hr/&gt;&quot;);   // string(11) &quot;orange</div><div class="line">	</div><div class="line">	$language = array(&quot;en&quot; =&gt; &quot;english&quot;,&quot;ch&quot; =&gt; &quot;chinese&quot;);</div><div class="line">	var_dump($language[&quot;en&quot;]);   // string(7) &quot;english&quot;</div><div class="line">	</div><div class="line">	$language[&quot;fr&quot;] = &quot;french&quot;;</div><div class="line">	var_dump($language);</div><div class="line">	// array(3) &#123; [&quot;en&quot;]=&gt; string(7) &quot;english&quot; [&quot;ch&quot;]=&gt; string(7) &quot;chinese&quot; [&quot;fr&quot;]=&gt; string(6) &quot;french&quot; &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h2 id="直接赋值"><a href="#直接赋值" class="headerlink" title="直接赋值"></a>直接赋值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$fruit2[] = &quot;orange&quot;;</div><div class="line">	$fruit2[] = &quot;banana&quot;;</div><div class="line">	var_dump($fruit2);   // array(2) &#123; [0]=&gt; string(6) &quot;orange&quot; [1]=&gt; string(6) &quot;banana&quot; &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h2 id="range-创建"><a href="#range-创建" class="headerlink" title="range()创建"></a>range()创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	$num = range(0,3);   // 创建数组内容0~3</div><div class="line">	var_dump($num);   // array(4) &#123; [0]=&gt; int(0) [1]=&gt; int(1) [2]=&gt; int(2) [3]=&gt; int(3) &#125;</div><div class="line">	$letter = range(&quot;A&quot;,&quot;a&quot;);   // 打印从A~a </div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="2-数组长度-count"><a href="#2-数组长度-count" class="headerlink" title="2.数组长度 count();"></a>2.数组长度 count();</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">	echo count($letter);   // 33</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#	3.删除数组中第i个</div></pre></td></tr></table></figure>
+<p>&lt;?php<br>    unset($letter[i]);   // 删除索引值为i的值</p>
+<pre><code>unset($letter[5]);   // 删除索引值为i的值
+echo $letter[5];   // 索引值5被删除了
+// Notice: Undefined offset: 5 in xx .php on line x
+</code></pre><p>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	4.数组输出</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    print_r($letter);<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	5.in_array()  判断数组是否存在某个值</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    in_array(“b”,$letter)   // 判断$letter数组中是否存在b<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	6.遍历数组</div><div class="line">##	for 遍历</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    for($i = 0; $i &lt; count($letter); $i++){<br>        echo $letter[$i];<br>        // ABCDEGHIJKLMNOPQRSTUVWXYZ[]^_`<br>    }<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">##	foreach($数组 as $键 =&gt; $值)</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    foreach($letter as $key =&gt; $value){<br>        echo $key.”的值是”.$value.”<hr>“;<br>    }</p>
+<pre><code>foreach($letter as $value){
+        echo $value;
+        // ABCDEGHIJKLMNOPQRSTUVWXYZ[\]^_`
+}
+</code></pre><p>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	7.数组排序</div><div class="line">##	sort rsort 索引数组的排序 按阿斯科码</div><div class="line">sort 升序     rsort 降序</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    $fruit = array(“banana”,”orange”,”apple”);<br>    rsort($fruit);<br>    print_r($fruit);   // Array ( [0] =&gt; orange [1] =&gt; banana [2] =&gt; apple )<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">##	ksort,krsort 根据关联数组的键排序</div><div class="line">ksort 升序     krsort 降序</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    $fruit = array(“b”=&gt;”orange”,”a”=&gt;”banana”,”c”=&gt;”apple”);<br>    ksort($fruit);<br>    print_r($fruit);   // Array ( [a] =&gt; banana [b] =&gt; orange [c] =&gt; apple )<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">##	asort,arsort 根据关联数组的值排序 </div><div class="line">asort 升序     arsort 降序</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    asort($fruit);<br>    print_r($fruit);   // Array ( [c] =&gt; apple [a] =&gt; banana [b] =&gt; orange )<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	8.二维数组</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    $people = array(<br>        array(“name”=&gt;”zhangsan”,”sex”=&gt;”man”),<br>        array(“name”=&gt;”lisi”,”sex”=&gt;”woman”)<br>    );</p>
+<pre><code>print_r($people);
+// Array ( [0] =&gt; Array ( [name] =&gt; zhangsan [sex] =&gt; man ) [1] =&gt; Array ( [name] =&gt; lisi [sex] =&gt; woman ) )
+</code></pre><p>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	9.输出二维数组的值</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    for($i = 0; $i &lt; count($people); $i++){<br>        foreach($people[$i] as $key =&gt; $value){<br>            echo $people[$i][$key].”<hr>“;<br>        }<br>    }</p>
+<pre><code>foreach($people as $key =&gt; $newArr){
+    var_dump($newArr);
+    foreach($newArr as $key =&gt; $value){
+        echo $key.&quot;的值是&quot;.$value;
+        echo &quot;&lt;hr/&gt;&quot;;
+    }
+}
+
+for($i = 0; $i &lt; count($people); $i++){
+    var_dump($people[$i]);
+    foreach($people[$i] as $key =&gt; $value){
+        echo $value.&quot;&lt;hr/&gt;&quot;;
+    }
+}
+</code></pre><p>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	10.implode 数组转换成字符串</div><div class="line">implode(分隔符，数组)</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    $arr = array(1,2,3,4,5);<br>    $str = implode(“.”,$arr);<br>    echo $str;   // 1.2.3.4.5<br>?&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">***</div><div class="line">#	11.explode 字符串转换为数组</div><div class="line">explode(分隔符，字符串)</div></pre></td></tr></table></figure></p>
+<p>&lt;?php<br>    $str = “a,b,c,d,e”;<br>    $arr = explode(“,”,$str);<br>    print_r($arr);   // Array ( [0] =&gt; a [1] =&gt; b [2] =&gt; c [3] =&gt; d [4] =&gt; e )<br>?&gt;<br>```</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/07phpincloud/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/22/07phpincloud/" itemprop="url">
+                  php incloud
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T09:33:40+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/22/07phpincloud/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/07phpincloud/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-include-require"><a href="#1-include-require" class="headerlink" title="1.include (require)"></a>1.include (require)</h1><p>include (require)会获取指定文件中存在的所有文本/代码/标记，并复制到使用 include 语句的文件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">php</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;title&gt;document&lt;/title&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;?php </div><div class="line">			// 只会提示报错</div><div class="line">			include &quot;head.html&quot;;</div><div class="line">		?&gt;</div><div class="line">		&lt;h1&gt;我是内容&lt;/h1&gt;</div><div class="line">		&lt;?php</div><div class="line">			// 报错并停止运行下面的语句</div><div class="line">			require &quot;foot.html&quot;;</div><div class="line">		?&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">head.html</div><div class="line">&lt;h1&gt;我是头部&lt;/h1&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">foot.html</div><div class="line">&lt;h1&gt;我是尾部&lt;/h1&gt;</div></pre></td></tr></table></figure>
+<hr>
+<p>最终效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;title&gt;document&lt;/title&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;h1&gt;我是头部&lt;/h1&gt;</div><div class="line">		&lt;h1&gt;我是内容&lt;/h1&gt;</div><div class="line">		&lt;h1&gt;我是尾部&lt;/h1&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/06php运算符/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1591,162 +1947,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/18/hello-world/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Vipcw">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Vipcw's Home">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/18/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-18T16:48:43+08:00">
-                2017-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端开发/" itemprop="url" rel="index">
-                    <span itemprop="name">前端开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/18/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/18/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Hello World</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
           
           </div>
@@ -1788,7 +1995,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
