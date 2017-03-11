@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Less," />
 
 
 
@@ -87,15 +87,31 @@
 
 
 
-<meta name="description" content="❤❤亦如黎明中的花朵❤❤">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vipcw's Home">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="初识less编译工具koala
+.less -&amp;gt; .css
+输出方式normal:普通css
+compress:压缩过的css
+注释123/*我会被编译的*/    //我不会被编译
+变量12345678// @变量名：值;@test_width:300px;// 使用.body&amp;#123;    width: @test_width;    height: @test_width;&amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Less">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/Less/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
-<meta property="og:description" content="❤❤亦如黎明中的花朵❤❤">
+<meta property="og:description" content="初识less编译工具koala
+.less -&amp;gt; .css
+输出方式normal:普通css
+compress:压缩过的css
+注释123/*我会被编译的*/    //我不会被编译
+变量12345678// @变量名：值;@test_width:300px;// 使用.body&amp;#123;    width: @test_width;    height: @test_width;&amp;#12">
+<meta property="og:updated_time" content="2017-03-11T03:43:04.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vipcw's Home">
-<meta name="twitter:description" content="❤❤亦如黎明中的花朵❤❤">
+<meta name="twitter:title" content="Less">
+<meta name="twitter:description" content="初识less编译工具koala
+.less -&amp;gt; .css
+输出方式normal:普通css
+compress:压缩过的css
+注释123/*我会被编译的*/    //我不会被编译
+变量12345678// @变量名：值;@test_width:300px;// 使用.body&amp;#123;    width: @test_width;    height: @test_width;&amp;#12">
 
 
 
@@ -123,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/Less/"/>
 
 
 
 
 
-  <title> Vipcw's Home </title>
+  <title> Less | Vipcw's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +170,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -290,9 +304,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -325,10 +339,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/11/Less/" itemprop="url">
-                  Less
-                </a>
+                Less
               
             
           </h1>
@@ -411,9 +422,7 @@
       
 
       
-        
-          
-            <h1 id="初识less"><a href="#初识less" class="headerlink" title="初识less"></a>初识less</h1><h4 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h4><p>koala</p>
+        <h1 id="初识less"><a href="#初识less" class="headerlink" title="初识less"></a>初识less</h1><h4 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h4><p>koala</p>
 <p>.less -&gt; .css</p>
 <h4 id="输出方式"><a href="#输出方式" class="headerlink" title="输出方式"></a>输出方式</h4><p>normal:普通css</p>
 <p>compress:压缩过的css</p>
@@ -437,39 +446,71 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_03 &#123;</div><div class="line">  width: calc(300px-30);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="important关键字"><a href="#important关键字" class="headerlink" title="!important关键字"></a>!important关键字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_radius(@radius:5px)&#123;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    border-radius: @radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_impotant&#123;</div><div class="line">    .border_radius()!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_impotant &#123;</div><div class="line">  -webkit-border-radius: 5px !important;</div><div class="line">  -moz-border-radius: 5px !important;</div><div class="line">  border-radius: 5px !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wechatpay.png" alt="Vipcw WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/alipay.png" alt="Vipcw Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Less/" rel="tag"># Less</a>
+          
+        </div>
+      
+
+      
+        
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -477,6 +518,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/11/Less/"
+           data-title="Less" data-url="http://yoursite.com/2017/03/11/Less/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -495,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -592,6 +650,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识less"><span class="nav-number">1.</span> <span class="nav-text">初识less</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译工具"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">编译工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出方式"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">输出方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">注释</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#混合"><span class="nav-number">3.</span> <span class="nav-text">混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#纯class混合"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">纯class混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带参数混合"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">带参数混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不带参数混合-使用默认参数"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">不带参数混合(使用默认参数)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配模式"><span class="nav-number">4.</span> <span class="nav-text">匹配模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">5.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套"><span class="nav-number">6.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#arguments"><span class="nav-number">7.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#避免编译"><span class="nav-number">8.</span> <span class="nav-text">避免编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#important关键字"><span class="nav-number">9.</span> <span class="nav-text">!important关键字</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -691,6 +765,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
