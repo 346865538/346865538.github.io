@@ -3,16 +3,16 @@
   
     
     <entry>
-      <title><![CDATA[Node_createServer]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_createServer%2F</url>
-      <content type="text"><![CDATA[123456789101112131415161718192021// 需要引入 node 的原生模块&quot;http&quot;var http = require(&quot;http&quot;);var server = http.createServer(function(req,res)&#123; req: require,包含一些url信息 以及传入的数据 res: response,包含请求回应的状态码 返回的信息等等 req.url // &quot;/&quot;根目录 req.method // 请求方式 console.log(req,res) console.log(req.url) res.writeHead(200, &#123;&quot;Content-Type&quot;: &quot;text/html;charset=utf-8&quot;&#125;); // 设置编码utf8 // write 只做回应 不代表请求的结束 res.write(&quot;我是直接回应&quot;); // end 不只是输出返回的内容 还代表着本次请求的结束 res.end(&quot;我是本次请求的回应&quot;);&#125;)server.listen(8080); // 设置本服务的端口号]]></content>
+      <title><![CDATA[Node_buffer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_buffer%2F</url>
+      <content type="text"><![CDATA[buffer 一种缓存的数据格式，缓存区出现原因，js本身只有二进制的传输，只有字符串的传输 为了保存和处理二进制数据buffer 的形势是一串数组 而数组中的每一项是一个以16进制展示的8位字节Buffer 是一个类，他能实例出一个全局对象buffer 的每一位取值范围0-255 创建直接创建 由系统自动生成1var buff = new Buffer(12); // 参数为number 表示buffer的长度 填充值1buff.fill(&quot;a&quot;,3,6); 通过数组创建12345var buff2 = new Buffer([1,34,074,0xa6])var buff3 = new Buffer(&quot;今天天气很晴朗&quot;)var buff4 = new Buffer([0xe4,0xbb,0x8a,0xe5]);var buff5 = new Buffer([0xa4,0xa9,0xe5,0xa4,0xa9]);console.log(buff4.toString()) 把buffer 拼接起来 占用内存高12345678910console.log(Buffer.concat([buff4,buff5]).toString())var StringDecoder = require(&quot;string_decoder&quot;).StringDecoder; // 返回一个类var decoder = new StringDecoder();var str = decoder.write(buff4);console.log(str)var str2 = decoder.write(buff5);console.log(str2)]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[Node_buffer]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_buffer%2F</url>
-      <content type="text"><![CDATA[buffer 一种缓存的数据格式，缓存区出现原因，js本身只有二进制的传输，只有字符串的传输 为了保存和处理二进制数据buffer 的形势是一串数组 而数组中的每一项是一个以16进制展示的8位字节Buffer 是一个类，他能实例出一个全局对象buffer 的每一位取值范围0-255 创建直接创建 由系统自动生成1var buff = new Buffer(12); // 参数为number 表示buffer的长度 填充值1buff.fill(&quot;a&quot;,3,6); 通过数组创建12345var buff2 = new Buffer([1,34,074,0xa6])var buff3 = new Buffer(&quot;今天天气很晴朗&quot;)var buff4 = new Buffer([0xe4,0xbb,0x8a,0xe5]);var buff5 = new Buffer([0xa4,0xa9,0xe5,0xa4,0xa9]);console.log(buff4.toString()) 把buffer 拼接起来 占用内存高12345678910console.log(Buffer.concat([buff4,buff5]).toString())var StringDecoder = require(&quot;string_decoder&quot;).StringDecoder; // 返回一个类var decoder = new StringDecoder();var str = decoder.write(buff4);console.log(str)var str2 = decoder.write(buff5);console.log(str2)]]></content>
+      <title><![CDATA[Node_createServer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_createServer%2F</url>
+      <content type="text"><![CDATA[123456789101112131415161718192021// 需要引入 node 的原生模块&quot;http&quot;var http = require(&quot;http&quot;);var server = http.createServer(function(req,res)&#123; req: require,包含一些url信息 以及传入的数据 res: response,包含请求回应的状态码 返回的信息等等 req.url // &quot;/&quot;根目录 req.method // 请求方式 console.log(req,res) console.log(req.url) res.writeHead(200, &#123;&quot;Content-Type&quot;: &quot;text/html;charset=utf-8&quot;&#125;); // 设置编码utf8 // write 只做回应 不代表请求的结束 res.write(&quot;我是直接回应&quot;); // end 不只是输出返回的内容 还代表着本次请求的结束 res.end(&quot;我是本次请求的回应&quot;);&#125;)server.listen(8080); // 设置本服务的端口号]]></content>
     </entry>
 
     
@@ -24,6 +24,20 @@
 
     
     <entry>
+      <title><![CDATA[Node_fs]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_fs%2F</url>
+      <content type="text"><![CDATA[读取文件异步写法1234567fs.readFile(&quot;test.txt&quot;,&quot;utf-8&quot;,function(err,data)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(data); &#125;&#125;) 同步写法1234var data = fs.readFileSync(&quot;test.txt&quot;,&quot;utf-8&quot;);console.log(data);console.log(&quot;我是读取操作之后的内容&quot;) 写入文件123456fs.writeFile(&quot;test.txt&quot;,&quot;我是写入的内容&quot;,&#123;flag:&quot;a&quot;&#125;,function(err)&#123; if(err)&#123; console.log(err) &#125; console.log(&quot;写入成功&quot;)&#125;) 目录操作123456789var fs = require(&quot;fs&quot;);fs.mkdir(&quot;test2&quot;,055,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;创建成功&quot;);6 &#125;&#125;)// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读 删除目录1234567fs.rmdir(&quot;test2&quot;,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;删除成功&quot;); &#125;&#125;) 读取目录(输出指定目录下除了.和..的所有文件组成的数组)1234567fs.readdir(&quot;./&quot;,function(err,files)&#123; if(err)&#123; console.log(err); &#125;else&#123; // console.log(files) &#125;&#125;) 输出文件或目录的详情1234567fs.stat(&quot;./test.txt&quot;,function(err,stat)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(stat) &#125;&#125;) 判断文件是否存在1234fs.exists(&quot;test&quot;,function(exists)&#123; // 存在为true 反之为false console.log(exists)&#125;) 通过相对路径获得绝对路径1234567fs.realpath(&quot;test&quot;,function(err,path)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(path); &#125;&#125;) 重命名1234567fs.rename(&quot;test&quot;,&quot;newtest&quot;,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;重命名成功&quot;); &#125;&#125;)]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_path]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_path%2F</url>
+      <content type="text"><![CDATA[path: 里面封装了一些对文件路径的操作 normalize 规范化字符串路径1234var path = require(&quot;path&quot;);var pathstr = &quot;a/b/./c/../d/f/./e&quot;;console.log(path.normalize(pathstr)); join 将参数解析为绝对路径123console.log(__dirname);console.log(path.join(__dirname,&quot;a&quot;,&quot;..b&quot;,&quot;..c/e/./d&quot;,&quot;test.txt&quot;)) resolve 拼接路径1console.log(path.resolve(&quot;www.baidu.com&quot;,&quot;a/..&quot;,&quot;n/..&quot;,&quot;text.html&quot;));]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Node_createServer]]></title>
       <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
       <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
@@ -31,9 +45,9 @@
 
     
     <entry>
-      <title><![CDATA[Node_fs]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_fs%2F</url>
-      <content type="text"><![CDATA[读取文件异步写法1234567fs.readFile(&quot;test.txt&quot;,&quot;utf-8&quot;,function(err,data)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(data); &#125;&#125;) 同步写法1234var data = fs.readFileSync(&quot;test.txt&quot;,&quot;utf-8&quot;);console.log(data);console.log(&quot;我是读取操作之后的内容&quot;) 写入文件123456fs.writeFile(&quot;test.txt&quot;,&quot;我是写入的内容&quot;,&#123;flag:&quot;a&quot;&#125;,function(err)&#123; if(err)&#123; console.log(err) &#125; console.log(&quot;写入成功&quot;)&#125;) 目录操作```var fs = require(“fs”);fs.mkdir(“test2”,055,function(err){ if(err){ console.log(err) }else{ console.log(“创建成功”);6 }})// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读 fs.rmdir(“test2”,function(err){ if(err){ console.log(err) }else{ console.log(“删除成功”); }}) // 读取目录(输出指定目录下除了.和..的所有文件组成的数组)fs.readdir(“./“,function(err,files){ if(err){ console.log(err); }else{ // console.log(files) }}) // 输出文件或目录的详情fs.stat(“./test.txt”,function(err,stat){ if(err){ console.log(err) }else{ console.log(stat) }}) // 判断文件是否存在fs.exists(“test”,function(exists){ // 存在为true 反之为false console.log(exists)}) // 通过相对路径获得绝对路径fs.realpath(“test”,function(err,path){ if(err){ console.log(err); }else{ console.log(path); }}) // 重命名fs.rename(“test”,”newtest”,function(err){ if(err){ console.log(err) }else{ console.log(“重命名成功”); }})]]></content>
+      <title><![CDATA[Node_stream]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_stream%2F</url>
+      <content type="text"><![CDATA[stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存var fs = require(“fs”); 复制文件123456789101112131415161718192021// 创建可读流// 每一个可读流具有data事件var rs = fs.createReadStream(&quot;1.jpg&quot;);// 创建可写流var ws = fs.createWriteStream(&quot;3.jpg&quot;);var times = 0;rs.on(&quot;data&quot;,function(chunk)&#123; // 把文件分割成64K 所以每64K会触发一次事件 times++; // console.log(times) // console.log(chunk) ws.write(chunk,function()&#123; console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;) &#125;)&#125;)rs.on(&quot;end&quot;,function()&#123; console.log(times);&#125;) 管道123var rs = fs.createReadStream(&quot;1.jpg&quot;);var ws = fs.createWriteStream(&quot;4.jpg&quot;);rs.pipe(ws);]]></content>
     </entry>
 
     

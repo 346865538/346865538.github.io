@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/16/Node_fs/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
 <meta property="og:description" content="Node_fs模块">
-<meta property="og:updated_time" content="2017-03-16T09:27:07.998Z">
+<meta property="og:updated_time" content="2017-03-16T09:32:46.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node_fs">
 <meta name="twitter:description" content="Node_fs模块">
@@ -414,14 +414,13 @@
         <h1 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h1><h4 id="异步写法"><a href="#异步写法" class="headerlink" title="异步写法"></a>异步写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.readFile(&quot;test.txt&quot;,&quot;utf-8&quot;,function(err,data)&#123;</div><div class="line">	if(err)&#123;</div><div class="line">		console.log(err);</div><div class="line">	&#125;else&#123;</div><div class="line">		console.log(data);</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h4 id="同步写法"><a href="#同步写法" class="headerlink" title="同步写法"></a>同步写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var data = fs.readFileSync(&quot;test.txt&quot;,&quot;utf-8&quot;);</div><div class="line">console.log(data);</div><div class="line"></div><div class="line">console.log(&quot;我是读取操作之后的内容&quot;)</div></pre></td></tr></table></figure>
 <h1 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fs.writeFile(&quot;test.txt&quot;,&quot;我是写入的内容&quot;,&#123;flag:&quot;a&quot;&#125;,function(err)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;</div><div class="line">    console.log(&quot;写入成功&quot;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><p>```<br>var fs = require(“fs”);<br>fs.mkdir(“test2”,055,function(err){<br>    if(err){<br>        console.log(err)<br>    }else{<br>        console.log(“创建成功”);6<br>    }<br>})<br>// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读</p>
-<p>fs.rmdir(“test2”,function(err){<br>    if(err){<br>        console.log(err)<br>    }else{<br>        console.log(“删除成功”);<br>    }<br>})</p>
-<p>// 读取目录(输出指定目录下除了.和..的所有文件组成的数组)<br>fs.readdir(“./“,function(err,files){<br>    if(err){<br>        console.log(err);<br>    }else{<br>        // console.log(files)<br>    }<br>})</p>
-<p>// 输出文件或目录的详情<br>fs.stat(“./test.txt”,function(err,stat){<br>    if(err){<br>        console.log(err)<br>    }else{<br>        console.log(stat)<br>    }<br>})</p>
-<p>// 判断文件是否存在<br>fs.exists(“test”,function(exists){<br>    // 存在为true 反之为false<br>    console.log(exists)<br>})</p>
-<p>// 通过相对路径获得绝对路径<br>fs.realpath(“test”,function(err,path){<br>    if(err){<br>        console.log(err);<br>    }else{<br>        console.log(path);<br>    }<br>})</p>
-<p>// 重命名<br>fs.rename(“test”,”newtest”,function(err){<br>    if(err){<br>        console.log(err)<br>    }else{<br>        console.log(“重命名成功”);<br>    }<br>})</p>
-
+<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var fs = require(&quot;fs&quot;);</div><div class="line">fs.mkdir(&quot;test2&quot;,055,function(err)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;else&#123;</div><div class="line">        console.log(&quot;创建成功&quot;);6</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读</div></pre></td></tr></table></figure>
+<h1 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.rmdir(&quot;test2&quot;,function(err)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;else&#123;</div><div class="line">        console.log(&quot;删除成功&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="读取目录-输出指定目录下除了-和-的所有文件组成的数组"><a href="#读取目录-输出指定目录下除了-和-的所有文件组成的数组" class="headerlink" title="读取目录(输出指定目录下除了.和..的所有文件组成的数组)"></a>读取目录(输出指定目录下除了.和..的所有文件组成的数组)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.readdir(&quot;./&quot;,function(err,files)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err);</div><div class="line">    &#125;else&#123;</div><div class="line">        // console.log(files)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="输出文件或目录的详情"><a href="#输出文件或目录的详情" class="headerlink" title="输出文件或目录的详情"></a>输出文件或目录的详情</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.stat(&quot;./test.txt&quot;,function(err,stat)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;else&#123;</div><div class="line">        console.log(stat)</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="判断文件是否存在"><a href="#判断文件是否存在" class="headerlink" title="判断文件是否存在"></a>判断文件是否存在</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.exists(&quot;test&quot;,function(exists)&#123;</div><div class="line">    // 存在为true 反之为false</div><div class="line">    console.log(exists)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="通过相对路径获得绝对路径"><a href="#通过相对路径获得绝对路径" class="headerlink" title="通过相对路径获得绝对路径"></a>通过相对路径获得绝对路径</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.realpath(&quot;test&quot;,function(err,path)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err);</div><div class="line">    &#125;else&#123;</div><div class="line">        console.log(path);</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fs.rename(&quot;test&quot;,&quot;newtest&quot;,function(err)&#123;</div><div class="line">    if(err)&#123;</div><div class="line">        console.log(err)</div><div class="line">    &#125;else&#123;</div><div class="line">        console.log(&quot;重命名成功&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -478,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/16/Node_util/" rel="next" title="Node_util">
-                <i class="fa fa-chevron-left"></i> Node_util
+              <a href="/2017/03/16/Node_path/" rel="next" title="Node_path">
+                <i class="fa fa-chevron-left"></i> Node_path
               </a>
             
           </div>
@@ -488,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_require/" rel="prev" title="Node_createServer">
-                Node_createServer <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/16/Node_event/" rel="prev" title="Node_event">
+                Node_event <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -565,7 +564,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -656,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#读取文件"><span class="nav-number">1.</span> <span class="nav-text">读取文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步写法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">异步写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步写法"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">同步写法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入文件"><span class="nav-number">2.</span> <span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录操作"><span class="nav-number">3.</span> <span class="nav-text">目录操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#读取文件"><span class="nav-number">1.</span> <span class="nav-text">读取文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步写法"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">异步写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步写法"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">同步写法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写入文件"><span class="nav-number">2.</span> <span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录操作"><span class="nav-number">3.</span> <span class="nav-text">目录操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除目录"><span class="nav-number">4.</span> <span class="nav-text">删除目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取目录-输出指定目录下除了-和-的所有文件组成的数组"><span class="nav-number">5.</span> <span class="nav-text">读取目录(输出指定目录下除了.和..的所有文件组成的数组)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出文件或目录的详情"><span class="nav-number">6.</span> <span class="nav-text">输出文件或目录的详情</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断文件是否存在"><span class="nav-number">7.</span> <span class="nav-text">判断文件是否存在</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过相对路径获得绝对路径"><span class="nav-number">8.</span> <span class="nav-text">通过相对路径获得绝对路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重命名"><span class="nav-number">9.</span> <span class="nav-text">重命名</span></a></li></ol></div>
             
 
           </div>
