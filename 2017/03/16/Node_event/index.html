@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Less," />
+  <meta name="keywords" content="Nodejs," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Less基础操作">
+<meta name="description" content="Node_event模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Less">
-<meta property="og:url" content="http://yoursite.com/2017/03/11/Less/index.html">
+<meta property="og:title" content="Node_event">
+<meta property="og:url" content="http://yoursite.com/2017/03/16/Node_event/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
-<meta property="og:description" content="Less基础操作">
-<meta property="og:updated_time" content="2017-03-11T03:50:34.300Z">
+<meta property="og:description" content="Node_event模块">
+<meta property="og:updated_time" content="2017-03-16T09:09:19.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Less">
-<meta name="twitter:description" content="Less基础操作">
+<meta name="twitter:title" content="Node_event">
+<meta name="twitter:description" content="Node_event模块">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/11/Less/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/16/Node_event/"/>
 
 
 
 
 
-  <title> Less | Vipcw's Home </title>
+  <title> Node_event | Vipcw's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/Less/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/Node_event/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Vipcw">
@@ -324,7 +324,7 @@
             
             
               
-                Less
+                Node_event
               
             
           </h1>
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T11:41:41+08:00">
-                2017-03-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T16:29:10+08:00">
+                2017-03-16
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/11/Less/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Less/" itemprop="commentCount"></span>
+                <a href="/2017/03/16/Node_event/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/16/Node_event/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +396,7 @@
 
           
               <div class="post-description">
-                  Less基础操作
+                  Node_event模块
               </div>
           
 
@@ -411,30 +411,8 @@
       
 
       
-        <h1 id="初识less"><a href="#初识less" class="headerlink" title="初识less"></a>初识less</h1><h4 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h4><p>koala</p>
-<p>.less -&gt; .css</p>
-<h4 id="输出方式"><a href="#输出方式" class="headerlink" title="输出方式"></a>输出方式</h4><p>normal:普通css</p>
-<p>compress:压缩过的css</p>
-<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*我会被编译的*/</div><div class="line">    </div><div class="line">//我不会被编译</div></pre></td></tr></table></figure>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// @变量名：值;</div><div class="line">@test_width:300px;</div><div class="line"></div><div class="line">// 使用</div><div class="line">.body&#123;</div><div class="line">    width: @test_width;</div><div class="line">    height: @test_width;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h1><h4 id="纯class混合"><a href="#纯class混合" class="headerlink" title="纯class混合"></a>纯class混合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.box&#123;</div><div class="line">    .border;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.border&#123;</div><div class="line">    border:solid 5px pink;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.box&#123;</div><div class="line">    border:solid 5px pnik;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="带参数混合"><a href="#带参数混合" class="headerlink" title="带参数混合"></a>带参数混合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_02(@border_width)&#123;</div><div class="line">    border:solid yellow @border_width;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_hunhe&#123;</div><div class="line">    .border_02(30px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_hunhe &#123;</div><div class="line">  border: solid yellow 30px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="不带参数混合-使用默认参数"><a href="#不带参数混合-使用默认参数" class="headerlink" title="不带参数混合(使用默认参数)"></a>不带参数混合(使用默认参数)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_radius(@radius:5px)&#123;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    border-radius: @radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.radius_test&#123;</div><div class="line">    .border_radius(10px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.radius_test&#123;</div><div class="line">    -webkit-border-radius: 10px;</div><div class="line">    -moz-border-radius: 10pxx;</div><div class="line">    border-radius: 10px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.pos(r)&#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.pos(a)&#123;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.pos(f)&#123;</div><div class="line">    position: fixed;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pipei&#123;</div><div class="line">    .pos(r);</div><div class="line">&#125;</div><div class="line">.pipei2&#123;</div><div class="line">    .pos(a);</div><div class="line">&#125;</div><div class="line">.pipei3&#123;</div><div class="line">    .pos(f);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.pipei&#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.pipei2&#123;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.pipei3&#123;</div><div class="line">    position: fixed;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">@test_01:300px;</div><div class="line"></div><div class="line">.box_02&#123;</div><div class="line">    width: (@test_01 - 20) * 5;</div><div class="line">    color: #ccc - 10;   </div><div class="line">    // 颜色转化成255,255,255计算</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.box_02 &#123;</div><div class="line">  width: 1400px;</div><div class="line">  color: #c2c2c2; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.list&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 600px</div><div class="line">    </div><div class="line">    li&#123;</div><div class="line">        height: 30px;</div><div class="line">        height: 30px;</div><div class="line">        </div><div class="line">        a&#123;</div><div class="line">            float: left;</div><div class="line">            // &amp;代表他的上一层选择器</div><div class="line">            &amp;:hover&#123;</div><div class="line">                color: red;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.list &#123;</div><div class="line">  width: 600px;</div><div class="line">  height: 600px;</div><div class="line">&#125;</div><div class="line">.list li &#123;</div><div class="line">  height: 30px;</div><div class="line">&#125;</div><div class="line">.list li a &#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line">.list li a:hover &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h1><p>包含了所有传进来的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_arg(@w:30px,@c:red,@xx:solid)&#123;</div><div class="line">    border: @arguments;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_arg&#123;</div><div class="line">    .border_arg(40px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_arg &#123;</div><div class="line">  border: 40px red solid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="避免编译"><a href="#避免编译" class="headerlink" title="避免编译"></a>避免编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.test_03&#123;</div><div class="line">    width: ~&apos;calc(300px-30)&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_03 &#123;</div><div class="line">  width: calc(300px-30);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="important关键字"><a href="#important关键字" class="headerlink" title="!important关键字"></a>!important关键字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_radius(@radius:5px)&#123;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    border-radius: @radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_impotant&#123;</div><div class="line">    .border_radius()!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_impotant &#123;</div><div class="line">  -webkit-border-radius: 5px !important;</div><div class="line">  -moz-border-radius: 5px !important;</div><div class="line">  border-radius: 5px !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h1><p>又称为发布订阅模式<br>或者观察者模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">// var events = require(&quot;events&quot;).EventEmitter;   // 旧写法</div><div class="line">var events = require(&quot;events&quot;);   // 引入events模块</div><div class="line">var util = require(&quot;util&quot;);</div><div class="line">// 创建事件的发布者以及事件的观察者</div><div class="line">function Girl()&#123;</div><div class="line">    // 假设女神饿了</div><div class="line">&#125;</div><div class="line">function Boy(name,response)&#123;</div><div class="line">    this.name = name,</div><div class="line">    this.response = response</div><div class="line">&#125;</div><div class="line">var goddess = new Girl(function()&#123;</div><div class="line">    console.log(&quot;自己打电话叫外卖&quot;);</div><div class="line">&#125;);</div><div class="line">var boy1 = new Boy(&quot;备胎1&quot;,function()&#123;</div><div class="line">    console.log(&quot;点饿了么&quot;);</div><div class="line">&#125;)</div><div class="line">var boy2 = new Boy(&quot;备胎2&quot;,function()&#123;</div><div class="line">    console.log(&quot;上美团外卖&quot;);</div><div class="line">&#125;)</div><div class="line">var boy3 = new Boy(&quot;备胎3&quot;,function()&#123;</div><div class="line">    console.log(&quot;上百度外卖&quot;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">util.inherits(Girl,events);</div><div class="line">// 继承来自于events的原型方法</div><div class="line"></div><div class="line">// 设置监听者的最大数</div><div class="line">goddess.setMaxListeners(2);</div><div class="line">// 只是绑定监听者</div><div class="line">goddess.on(&quot;ele&quot;,boy1.response);</div><div class="line">goddess.on(&quot;ele&quot;,boy2.response);</div><div class="line">goddess.addListener(&quot;ele&quot;,boy3.response);</div><div class="line">goddess.on(&quot;ele&quot;,function()&#123;</div><div class="line">    console.log(&quot;自己叫外卖&quot;)</div><div class="line">&#125;);</div><div class="line">// once 绑定的事件只会触发一次</div><div class="line">goddess.once(&quot;ele&quot;,function()&#123;</div><div class="line">    console.log(&quot;女神饿死了&quot;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 移除事件</div><div class="line">goddess.removeListener(&quot;ele&quot;,boy2.response);</div><div class="line">// 移除所有事件</div><div class="line">goddess.removeAllListeners(&quot;ele&quot;);</div><div class="line"></div><div class="line">// 发送事件(事件触发)</div><div class="line">goddess.emit(&quot;ele&quot;);</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -478,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Less/" rel="tag"># Less</a>
+            <a href="/tags/Nodejs/" rel="tag"># Nodejs</a>
           
         </div>
       
@@ -491,14 +469,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/16/Node_require/" rel="next" title="Node_createServer">
+                <i class="fa fa-chevron-left"></i> Node_createServer
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_util/" rel="prev" title="Node_util">
-                Node_util <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/16/Node_buffer/" rel="prev" title="Node_buffer">
+                Node_buffer <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,8 +507,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/11/Less/"
-           data-title="Less" data-url="http://yoursite.com/2017/03/11/Less/">
+      <div class="ds-thread" data-thread-key="2017/03/16/Node_event/"
+           data-title="Node_event" data-url="http://yoursite.com/2017/03/16/Node_event/">
       </div>
     
   </div>
@@ -665,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识less"><span class="nav-number">1.</span> <span class="nav-text">初识less</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译工具"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">编译工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出方式"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">输出方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">注释</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#混合"><span class="nav-number">3.</span> <span class="nav-text">混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#纯class混合"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">纯class混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带参数混合"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">带参数混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不带参数混合-使用默认参数"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">不带参数混合(使用默认参数)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配模式"><span class="nav-number">4.</span> <span class="nav-text">匹配模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">5.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套"><span class="nav-number">6.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#arguments"><span class="nav-number">7.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#避免编译"><span class="nav-number">8.</span> <span class="nav-text">避免编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#important关键字"><span class="nav-number">9.</span> <span class="nav-text">!important关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件："><span class="nav-number">1.</span> <span class="nav-text">事件：</span></a></li></ol></div>
             
 
           </div>

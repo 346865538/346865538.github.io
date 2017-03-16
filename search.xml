@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[Node_createServer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_createServer%2F</url>
+      <content type="text"><![CDATA[123456789101112131415161718192021// 需要引入 node 的原生模块&quot;http&quot;var http = require(&quot;http&quot;);var server = http.createServer(function(req,res)&#123; req: require,包含一些url信息 以及传入的数据 res: response,包含请求回应的状态码 返回的信息等等 req.url // &quot;/&quot;根目录 req.method // 请求方式 console.log(req,res) console.log(req.url) res.writeHead(200, &#123;&quot;Content-Type&quot;: &quot;text/html;charset=utf-8&quot;&#125;); // 设置编码utf8 // write 只做回应 不代表请求的结束 res.write(&quot;我是直接回应&quot;); // end 不只是输出返回的内容 还代表着本次请求的结束 res.end(&quot;我是本次请求的回应&quot;);&#125;)server.listen(8080); // 设置本服务的端口号]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_buffer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_buffer%2F</url>
+      <content type="text"><![CDATA[buffer 一种缓存的数据格式，缓存区出现原因，js本身只有二进制的传输，只有字符串的传输 为了保存和处理二进制数据buffer 的形势是一串数组 而数组中的每一项是一个以16进制展示的8位字节Buffer 是一个类，他能实例出一个全局对象buffer 的每一位取值范围0-255 创建直接创建 由系统自动生成1var buff = new Buffer(12); // 参数为number 表示buffer的长度 填充值1buff.fill(&quot;a&quot;,3,6); 通过数组创建12345var buff2 = new Buffer([1,34,074,0xa6])var buff3 = new Buffer(&quot;今天天气很晴朗&quot;)var buff4 = new Buffer([0xe4,0xbb,0x8a,0xe5]);var buff5 = new Buffer([0xa4,0xa9,0xe5,0xa4,0xa9]);console.log(buff4.toString()) 把buffer 拼接起来 占用内存高12345678910console.log(Buffer.concat([buff4,buff5]).toString())var StringDecoder = require(&quot;string_decoder&quot;).StringDecoder; // 返回一个类var decoder = new StringDecoder();var str = decoder.write(buff4);console.log(str)var str2 = decoder.write(buff5);console.log(str2)]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_event]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_event%2F</url>
+      <content type="text"><![CDATA[事件：又称为发布订阅模式或者观察者模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748// var events = require(&quot;events&quot;).EventEmitter; // 旧写法var events = require(&quot;events&quot;); // 引入events模块var util = require(&quot;util&quot;);// 创建事件的发布者以及事件的观察者function Girl()&#123; // 假设女神饿了&#125;function Boy(name,response)&#123; this.name = name, this.response = response&#125;var goddess = new Girl(function()&#123; console.log(&quot;自己打电话叫外卖&quot;);&#125;);var boy1 = new Boy(&quot;备胎1&quot;,function()&#123; console.log(&quot;点饿了么&quot;);&#125;)var boy2 = new Boy(&quot;备胎2&quot;,function()&#123; console.log(&quot;上美团外卖&quot;);&#125;)var boy3 = new Boy(&quot;备胎3&quot;,function()&#123; console.log(&quot;上百度外卖&quot;);&#125;)util.inherits(Girl,events);// 继承来自于events的原型方法// 设置监听者的最大数goddess.setMaxListeners(2);// 只是绑定监听者goddess.on(&quot;ele&quot;,boy1.response);goddess.on(&quot;ele&quot;,boy2.response);goddess.addListener(&quot;ele&quot;,boy3.response);goddess.on(&quot;ele&quot;,function()&#123; console.log(&quot;自己叫外卖&quot;)&#125;);// once 绑定的事件只会触发一次goddess.once(&quot;ele&quot;,function()&#123; console.log(&quot;女神饿死了&quot;);&#125;);// 移除事件goddess.removeListener(&quot;ele&quot;,boy2.response);// 移除所有事件goddess.removeAllListeners(&quot;ele&quot;);// 发送事件(事件触发)goddess.emit(&quot;ele&quot;);]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_createServer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
+      <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_fs]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_fs%2F</url>
+      <content type="text"><![CDATA[读取文件异步写法1234567fs.readFile(&quot;test.txt&quot;,&quot;utf-8&quot;,function(err,data)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(data); &#125;&#125;) 同步写法1234var data = fs.readFileSync(&quot;test.txt&quot;,&quot;utf-8&quot;);console.log(data);console.log(&quot;我是读取操作之后的内容&quot;) 写入文件123456fs.writeFile(&quot;test.txt&quot;,&quot;我是写入的内容&quot;,&#123;flag:&quot;a&quot;&#125;,function(err)&#123; if(err)&#123; console.log(err) &#125; console.log(&quot;写入成功&quot;)&#125;) 目录操作```var fs = require(“fs”);fs.mkdir(“test2”,055,function(err){ if(err){ console.log(err) }else{ console.log(“创建成功”);6 }})// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读 fs.rmdir(“test2”,function(err){ if(err){ console.log(err) }else{ console.log(“删除成功”); }}) // 读取目录(输出指定目录下除了.和..的所有文件组成的数组)fs.readdir(“./“,function(err,files){ if(err){ console.log(err); }else{ // console.log(files) }}) // 输出文件或目录的详情fs.stat(“./test.txt”,function(err,stat){ if(err){ console.log(err) }else{ console.log(stat) }}) // 判断文件是否存在fs.exists(“test”,function(exists){ // 存在为true 反之为false console.log(exists)}) // 通过相对路径获得绝对路径fs.realpath(“test”,function(err,path){ if(err){ console.log(err); }else{ console.log(path); }}) // 重命名fs.rename(“test”,”newtest”,function(err){ if(err){ console.log(err) }else{ console.log(“重命名成功”); }})]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_util]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_util%2F</url>
+      <content type="text"><![CDATA[util 这个模块保存了利于其他模块的工具使用最多的方法有三种 1.实现对象原型继承 2.把一个对象作为字符串输出 3.数据类型的检测引入：1var util = require(&quot;util&quot;); 实现继承(util.inherits(子类,父类))123456789101112131415161718192021222324// 创建一个父类与子类并分别实例化 子类继承父类的方法function Parent(name,age)&#123; this.name = name, this.age = age, this.sayHello = function()&#123; console.log(&quot;hello&quot;); &#125;&#125;Parent.prototype.sayName = function()&#123; console.log(this.name);&#125;function Child(name,age)&#123; // 构造函数继承 Parent.apply(this,[name,age]);&#125;util.inherits(Child,Parent); // 继承原型的方法var dad = new Parent(&quot;老爸&quot;,&quot;48&quot;);var son = new Child(&quot;儿子&quot;,&quot;28&quot;);console.log(dad.name);console.log(son.name);son.sayHello();son.sayName(); 转换成字符串(util.inspect())12var str = util.inspect(son);console.log(str); 判断数据类型(util.isArray())123456console.log(typeof &#123;&#125;)console.log(typeof &#123;&#125;)console.log(typeof (new Date()));console.log(util.isArray([]));console.log(util.isBoolean(1));console.log(util.is)]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Less]]></title>
       <url>%2F2017%2F03%2F11%2FLess%2F</url>
       <content type="text"><![CDATA[初识less编译工具koala .less -&gt; .css 输出方式normal:普通css compress:压缩过的css 注释123/*我会被编译的*/ //我不会被编译 变量12345678// @变量名：值;@test_width:300px;// 使用.body&#123; width: @test_width; height: @test_width;&#125; 混合纯class混合123456789=====less=====.box&#123; .border;&#125;.border&#123; border:solid 5px pink;&#125; 12345=====css=====.box&#123; border:solid 5px pnik;&#125; 带参数混合123456789=====less=====.border_02(@border_width)&#123; border:solid yellow @border_width;&#125;.test_hunhe&#123; .border_02(30px);&#125; 12345=====css=====.test_hunhe &#123; border: solid yellow 30px;&#125; 不带参数混合(使用默认参数)1234567891011=====less=====.border_radius(@radius:5px)&#123; -webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius: @radius;&#125;.radius_test&#123; .border_radius(10px);&#125; 1234567=====css=====.radius_test&#123; -webkit-border-radius: 10px; -moz-border-radius: 10pxx; border-radius: 10px;&#125; 匹配模式123456789101112131415161718192021=====less=====.pos(r)&#123; position: relative;&#125;.pos(a)&#123; position: absolute;&#125;.pos(f)&#123; position: fixed;&#125;.pipei&#123; .pos(r);&#125;.pipei2&#123; .pos(a);&#125;.pipei3&#123; .pos(f);&#125; 1234567891011=====css=====.pipei&#123; position: relative;&#125;.pipei2&#123; position: absolute;&#125;.pipei3&#123; position: fixed;&#125; 运算123456789=====less=====@test_01:300px;.box_02&#123; width: (@test_01 - 20) * 5; color: #ccc - 10; // 颜色转化成255,255,255计算&#125; 123456=====css=====.box_02 &#123; width: 1400px; color: #c2c2c2; &#125; 嵌套1234567891011121314151617181920=====less=====.list&#123; width: 600px; height: 600px li&#123; height: 30px; height: 30px; a&#123; float: left; // &amp;代表他的上一层选择器 &amp;:hover&#123; color: red; &#125; &#125; &#125;&#125; 123456789101112131415=====css=====.list &#123; width: 600px; height: 600px;&#125;.list li &#123; height: 30px;&#125;.list li a &#123; float: left;&#125;.list li a:hover &#123; color: red;&#125; arguments包含了所有传进来的参数123456789=====less=====.border_arg(@w:30px,@c:red,@xx:solid)&#123; border: @arguments;&#125;.test_arg&#123; .border_arg(40px);&#125; 12345=====css=====.test_arg &#123; border: 40px red solid;&#125; 避免编译12345=====less=====.test_03&#123; width: ~&apos;calc(300px-30)&apos;;&#125; 12345=====css=====.test_03 &#123; width: calc(300px-30);&#125; !important关键字1234567891011=====less=====.border_radius(@radius:5px)&#123; -webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius: @radius;&#125;.test_impotant&#123; .border_radius()!important;&#125; 1234567=====css=====.test_impotant &#123; -webkit-border-radius: 5px !important; -moz-border-radius: 5px !important; border-radius: 5px !important;&#125;]]></content>
