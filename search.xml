@@ -10,14 +10,7 @@
 
     
     <entry>
-      <title><![CDATA[Angular 初识]]></title>
-      <url>%2F2017%2F04%2F10%2FAngular%E5%88%9D%E8%AF%86%2F</url>
-      <content type="text"><![CDATA[初识12345678&lt;!--ng-init 初始化变量--&gt;&lt;body ng-app=&quot;&quot; ng-init=&quot;name=&apos;zhangsan&apos;&quot;&gt; &lt;!--哪里使用angular就在哪一块加上ng-app--&gt; &lt;div&gt; &lt;input type=&quot;text&quot; ng-model=&quot;name&quot;/&gt; &lt;div&gt;hello,&#123;&#123; name &#125;&#125;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 输出表达式 {}123456&lt;body ng-app=&quot;&quot; ng-init=&quot;num1 = 0; num2 = 0&quot;&gt; &lt;input type=&quot;text&quot; ng-model=&quot;num1&quot; /&gt; &lt;input type=&quot;text&quot; ng-model=&quot;num2&quot; /&gt; // &#123;&#123;输出表达式:包括变量,以及各种运算符的组合&#125;&#125; &#123;&#123;num1*num2&#125;&#125;&lt;/body&gt;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Angular 指令]]></title>
+      <title><![CDATA[Angular 进阶]]></title>
       <url>%2F2017%2F04%2F10%2FAngular%E8%BF%9B%E9%98%B6%2F</url>
       <content type="text"><![CDATA[controller 控制器1234567891011121314151617181920212223242526272829303132&lt;body&gt; &lt;!--在一个页面里只能存在一个ng-app=&quot;&quot;,多了就只执行第一个,但是在一个页面里可以划分为不同的部分,(使用不同的控制器(controller)进行划分)--&gt; &lt;!--每个控制器都有一个域,这个域使用$scope表示--&gt; &lt;!--&lt;div ng-app=&quot;myapp&quot; ng-controller=&quot;mycontroller&quot; &gt; &lt;button ng-click=&quot;clickFn()&quot;&gt;点击&lt;/button&gt; &lt;input type=&quot;text&quot; ng-model=&quot;arr[2]&quot;/&gt; hello,&#123;&#123;arr[2]&#125;&#125; &lt;/div&gt; --&gt; &lt;div ng-app=&quot;myapp&quot;&gt; &lt;div ng-controller=&quot;mycon1&quot;&gt; &#123;&#123;name&#125;&#125; &lt;/div&gt; &lt;div ng-controller=&quot;mycon2&quot;&gt; &#123;&#123;name&#125;&#125; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;angular.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt; // 获取一下app 中括号表示引入的依赖 var app = angular.module(&quot;myapp&quot;,[]); // 设置控制器 app.controller(&quot;mycon1&quot;,function($scope)&#123; $scope.name = &quot;zhangsan&quot;; &#125;); app.controller(&quot;mycon2&quot;,function($scope)&#123; $scope.name = &quot;lisi&quot;; &#125;)&lt;/script&gt; directive 自定义属性12345678910111213141516171819202122232425262728293031&lt;body&gt; &lt;div ng-app=&quot;myApp&quot;&gt; &lt;div ng-controller=&quot;myController&quot;&gt; &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt; &lt;ng-hello&gt;&lt;/ng-hello&gt; &lt;div ng-hello=&quot;&quot;&gt;&lt;/div&gt; &lt;div class=&quot;ng-hello&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;script&gt; // 封装自定义属性 var app = angular.module(&quot;myApp&quot;,[]); app.controller(&quot;myController&quot;,function($scope)&#123; $scope.name=&quot;div&quot;; &#125;) //创建指令(对常用的dom结构和功能进行分装) app.directive(&quot;ngHello&quot;,function()&#123; return &#123; // restrict : &quot;A&quot;,//属性类型 // restrict : &quot;E&quot;,//标签类型 // restrict : &quot;C&quot;,//class类型 restrict: &quot;M&quot;, //作为注释使用 // restrict:默认为EA restrict : &quot;AEC&quot;,//全部类型 template : &quot;&lt;h1&gt;&lt;a href=&apos;###&apos;&gt;我是一个超文本链接&lt;/a&gt;&lt;/h1&gt;&quot; &#125; &#125;)&lt;/script&gt; Server请求文件内容12345678910var app = angular.module(&quot;myapp&quot;,[&quot;ngSanitize&quot;]);app.controller(&quot;mycon&quot;,function($scope,$http)&#123; $http.get(&quot;test.txt&quot;).then(function(res)&#123; // 成功的回调 $scope.content = res.data; &#125;,function(err)&#123; // 失败的回调 console.log(err); &#125;)&#125;) ngSanitize12345678910111213&lt;body ng-app=&quot;myapp&quot; ng-controller=&quot;mycon&quot;&gt; &lt;div ng-bind-html=&quot;content&quot;&gt;&lt;/div&gt;&lt;/body&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;angular-sanitize.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt; var app = angular.module(&quot;myapp&quot;,[&quot;ngSanitize&quot;]); app.controller(&quot;mycon&quot;,function($scope,$location)&#123; &lt;!--获取url--&gt; console.log($location.absUrl()); &#125;)&lt;/script&gt; 仿写百度搜索下拉栏123456789101112131415161718192021222324&lt;body ng-app=&quot;myapp&quot; ng-controller=&quot;mycon&quot;&gt; &lt;input type=&quot;text&quot; ng-model=&quot;name&quot; ng-change=&quot;change()&quot; /&gt; &lt;hr /&gt; &lt;table class=&quot;table table-striped&quot;&gt; &lt;tr ng-repeat=&quot;x in arr&quot;&gt; &lt;td&gt;&#123;&#123;x&#125;&#125;&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;&lt;/body&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;angular-sanitize.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt; var app = angular.module(&quot;myapp&quot;,[]); app.controller(&quot;mycon&quot;,function($scope,$http)&#123; $scope.change = function()&#123; &lt;!--jsonp--&gt; $http.jsonp(&quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&quot;+$scope.name+&quot;&amp;cb=JSON_CALLBACK&quot;).then(function(res)&#123; console.log(res.data); console.log(res.data.s); $scope.arr = res.data.s; &#125;) &#125; &#125;)&lt;/script&gt; 定时器 $timeout $interval123456789101112var app = angular.module(&quot;myapp&quot;,[]);app.controller(&quot;mycon&quot;,function($scope,$timeout)&#123; $timeout(function()&#123; console.log(&quot;a你好啊&quot;); &#125;,2000)&#125;) app.controller(&quot;mycon&quot;,function($scope,$interval)&#123; $interval(function()&#123; console.log(&quot;你好啊&quot;); &#125;,100)&#125;)]]></content>
     </entry>
@@ -31,30 +24,23 @@
 
     
     <entry>
+      <title><![CDATA[Angular 初识]]></title>
+      <url>%2F2017%2F04%2F10%2FAngular%E5%88%9D%E8%AF%86%2F</url>
+      <content type="text"><![CDATA[初识12345678&lt;!--ng-init 初始化变量--&gt;&lt;body ng-app=&quot;&quot; ng-init=&quot;name=&apos;zhangsan&apos;&quot;&gt; &lt;!--哪里使用angular就在哪一块加上ng-app--&gt; &lt;div&gt; &lt;input type=&quot;text&quot; ng-model=&quot;name&quot;/&gt; &lt;div&gt;hello,&#123;&#123; name &#125;&#125;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 输出表达式 {}123456&lt;body ng-app=&quot;&quot; ng-init=&quot;num1 = 0; num2 = 0&quot;&gt; &lt;input type=&quot;text&quot; ng-model=&quot;num1&quot; /&gt; &lt;input type=&quot;text&quot; ng-model=&quot;num2&quot; /&gt; // &#123;&#123;输出表达式:包括变量,以及各种运算符的组合&#125;&#125; &#123;&#123;num1*num2&#125;&#125;&lt;/body&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_event]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_event%2F</url>
+      <content type="text"><![CDATA[事件：又称为发布订阅模式或者观察者模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748// var events = require(&quot;events&quot;).EventEmitter; // 旧写法var events = require(&quot;events&quot;); // 引入events模块var util = require(&quot;util&quot;);// 创建事件的发布者以及事件的观察者function Girl()&#123; // 假设女神饿了&#125;function Boy(name,response)&#123; this.name = name, this.response = response&#125;var goddess = new Girl(function()&#123; console.log(&quot;自己打电话叫外卖&quot;);&#125;);var boy1 = new Boy(&quot;备胎1&quot;,function()&#123; console.log(&quot;点饿了么&quot;);&#125;)var boy2 = new Boy(&quot;备胎2&quot;,function()&#123; console.log(&quot;上美团外卖&quot;);&#125;)var boy3 = new Boy(&quot;备胎3&quot;,function()&#123; console.log(&quot;上百度外卖&quot;);&#125;)util.inherits(Girl,events);// 继承来自于events的原型方法// 设置监听者的最大数goddess.setMaxListeners(2);// 只是绑定监听者goddess.on(&quot;ele&quot;,boy1.response);goddess.on(&quot;ele&quot;,boy2.response);goddess.addListener(&quot;ele&quot;,boy3.response);goddess.on(&quot;ele&quot;,function()&#123; console.log(&quot;自己叫外卖&quot;)&#125;);// once 绑定的事件只会触发一次goddess.once(&quot;ele&quot;,function()&#123; console.log(&quot;女神饿死了&quot;);&#125;);// 移除事件goddess.removeListener(&quot;ele&quot;,boy2.response);// 移除所有事件goddess.removeAllListeners(&quot;ele&quot;);// 发送事件(事件触发)goddess.emit(&quot;ele&quot;);]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Node_fs]]></title>
       <url>%2F2017%2F03%2F16%2FNode_fs%2F</url>
       <content type="text"><![CDATA[读取文件异步写法1234567fs.readFile(&quot;test.txt&quot;,&quot;utf-8&quot;,function(err,data)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(data); &#125;&#125;) 同步写法1234var data = fs.readFileSync(&quot;test.txt&quot;,&quot;utf-8&quot;);console.log(data);console.log(&quot;我是读取操作之后的内容&quot;) 写入文件123456fs.writeFile(&quot;test.txt&quot;,&quot;我是写入的内容&quot;,&#123;flag:&quot;a&quot;&#125;,function(err)&#123; if(err)&#123; console.log(err) &#125; console.log(&quot;写入成功&quot;)&#125;) 目录操作123456789var fs = require(&quot;fs&quot;);fs.mkdir(&quot;test2&quot;,055,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;创建成功&quot;);6 &#125;&#125;)// mode 是权限的作用 是一个三位8进制数 每一位数字由1,2,4,组成 1可执行 2可写 4可读 删除目录1234567fs.rmdir(&quot;test2&quot;,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;删除成功&quot;); &#125;&#125;) 读取目录(输出指定目录下除了.和..的所有文件组成的数组)1234567fs.readdir(&quot;./&quot;,function(err,files)&#123; if(err)&#123; console.log(err); &#125;else&#123; // console.log(files) &#125;&#125;) 输出文件或目录的详情1234567fs.stat(&quot;./test.txt&quot;,function(err,stat)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(stat) &#125;&#125;) 判断文件是否存在1234fs.exists(&quot;test&quot;,function(exists)&#123; // 存在为true 反之为false console.log(exists)&#125;) 通过相对路径获得绝对路径1234567fs.realpath(&quot;test&quot;,function(err,path)&#123; if(err)&#123; console.log(err); &#125;else&#123; console.log(path); &#125;&#125;) 重命名1234567fs.rename(&quot;test&quot;,&quot;newtest&quot;,function(err)&#123; if(err)&#123; console.log(err) &#125;else&#123; console.log(&quot;重命名成功&quot;); &#125;&#125;)]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Node_path]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_path%2F</url>
-      <content type="text"><![CDATA[path: 里面封装了一些对文件路径的操作 normalize 规范化字符串路径1234var path = require(&quot;path&quot;);var pathstr = &quot;a/b/./c/../d/f/./e&quot;;console.log(path.normalize(pathstr)); join 将参数解析为绝对路径123console.log(__dirname);console.log(path.join(__dirname,&quot;a&quot;,&quot;..b&quot;,&quot;..c/e/./d&quot;,&quot;test.txt&quot;)) resolve 拼接路径1console.log(path.resolve(&quot;www.baidu.com&quot;,&quot;a/..&quot;,&quot;n/..&quot;,&quot;text.html&quot;));]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Node_buffer]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_buffer%2F</url>
-      <content type="text"></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Node_stream]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_stream%2F</url>
-      <content type="text"><![CDATA[stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存var fs = require(“fs”); 复制文件123456789101112131415161718192021// 创建可读流// 每一个可读流具有data事件var rs = fs.createReadStream(&quot;1.jpg&quot;);// 创建可写流var ws = fs.createWriteStream(&quot;3.jpg&quot;);var times = 0;rs.on(&quot;data&quot;,function(chunk)&#123; // 把文件分割成64K 所以每64K会触发一次事件 times++; // console.log(times) // console.log(chunk) ws.write(chunk,function()&#123; console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;) &#125;)&#125;)rs.on(&quot;end&quot;,function()&#123; console.log(times);&#125;) 管道123var rs = fs.createReadStream(&quot;1.jpg&quot;);var ws = fs.createWriteStream(&quot;4.jpg&quot;);rs.pipe(ws);]]></content>
     </entry>
 
     
@@ -67,22 +53,36 @@
     
     <entry>
       <title><![CDATA[Node_createServer]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
-      <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Node_createServer]]></title>
       <url>%2F2017%2F03%2F16%2FNode_createServer%2F</url>
       <content type="text"><![CDATA[123456789101112131415161718192021// 需要引入 node 的原生模块&quot;http&quot;var http = require(&quot;http&quot;);var server = http.createServer(function(req,res)&#123; req: require,包含一些url信息 以及传入的数据 res: response,包含请求回应的状态码 返回的信息等等 req.url // &quot;/&quot;根目录 req.method // 请求方式 console.log(req,res) console.log(req.url) res.writeHead(200, &#123;&quot;Content-Type&quot;: &quot;text/html;charset=utf-8&quot;&#125;); // 设置编码utf8 // write 只做回应 不代表请求的结束 res.write(&quot;我是直接回应&quot;); // end 不只是输出返回的内容 还代表着本次请求的结束 res.end(&quot;我是本次请求的回应&quot;);&#125;)server.listen(8080); // 设置本服务的端口号]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[Node_event]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_event%2F</url>
-      <content type="text"><![CDATA[事件：又称为发布订阅模式或者观察者模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748// var events = require(&quot;events&quot;).EventEmitter; // 旧写法var events = require(&quot;events&quot;); // 引入events模块var util = require(&quot;util&quot;);// 创建事件的发布者以及事件的观察者function Girl()&#123; // 假设女神饿了&#125;function Boy(name,response)&#123; this.name = name, this.response = response&#125;var goddess = new Girl(function()&#123; console.log(&quot;自己打电话叫外卖&quot;);&#125;);var boy1 = new Boy(&quot;备胎1&quot;,function()&#123; console.log(&quot;点饿了么&quot;);&#125;)var boy2 = new Boy(&quot;备胎2&quot;,function()&#123; console.log(&quot;上美团外卖&quot;);&#125;)var boy3 = new Boy(&quot;备胎3&quot;,function()&#123; console.log(&quot;上百度外卖&quot;);&#125;)util.inherits(Girl,events);// 继承来自于events的原型方法// 设置监听者的最大数goddess.setMaxListeners(2);// 只是绑定监听者goddess.on(&quot;ele&quot;,boy1.response);goddess.on(&quot;ele&quot;,boy2.response);goddess.addListener(&quot;ele&quot;,boy3.response);goddess.on(&quot;ele&quot;,function()&#123; console.log(&quot;自己叫外卖&quot;)&#125;);// once 绑定的事件只会触发一次goddess.once(&quot;ele&quot;,function()&#123; console.log(&quot;女神饿死了&quot;);&#125;);// 移除事件goddess.removeListener(&quot;ele&quot;,boy2.response);// 移除所有事件goddess.removeAllListeners(&quot;ele&quot;);// 发送事件(事件触发)goddess.emit(&quot;ele&quot;);]]></content>
+      <title><![CDATA[Node_createServer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
+      <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_buffer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_buffer%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_path]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_path%2F</url>
+      <content type="text"><![CDATA[path: 里面封装了一些对文件路径的操作 normalize 规范化字符串路径1234var path = require(&quot;path&quot;);var pathstr = &quot;a/b/./c/../d/f/./e&quot;;console.log(path.normalize(pathstr)); join 将参数解析为绝对路径123console.log(__dirname);console.log(path.join(__dirname,&quot;a&quot;,&quot;..b&quot;,&quot;..c/e/./d&quot;,&quot;test.txt&quot;)) resolve 拼接路径1console.log(path.resolve(&quot;www.baidu.com&quot;,&quot;a/..&quot;,&quot;n/..&quot;,&quot;text.html&quot;));]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Node_stream]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_stream%2F</url>
+      <content type="text"><![CDATA[stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存var fs = require(“fs”); 复制文件123456789101112131415161718192021// 创建可读流// 每一个可读流具有data事件var rs = fs.createReadStream(&quot;1.jpg&quot;);// 创建可写流var ws = fs.createWriteStream(&quot;3.jpg&quot;);var times = 0;rs.on(&quot;data&quot;,function(chunk)&#123; // 把文件分割成64K 所以每64K会触发一次事件 times++; // console.log(times) // console.log(chunk) ws.write(chunk,function()&#123; console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;) &#125;)&#125;)rs.on(&quot;end&quot;,function()&#123; console.log(times);&#125;) 管道123var rs = fs.createReadStream(&quot;1.jpg&quot;);var ws = fs.createWriteStream(&quot;4.jpg&quot;);rs.pipe(ws);]]></content>
     </entry>
 
     
