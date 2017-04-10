@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Less," />
+  <meta name="keywords" content="AngularJS," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Less基础操作">
+<meta name="description" content="Angular 指令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Less">
-<meta property="og:url" content="http://yoursite.com/2017/03/11/Less/index.html">
+<meta property="og:title" content="Angular 指令">
+<meta property="og:url" content="http://yoursite.com/2017/04/10/Angular进阶/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
-<meta property="og:description" content="Less基础操作">
-<meta property="og:updated_time" content="2017-03-11T03:50:34.300Z">
+<meta property="og:description" content="Angular 指令">
+<meta property="og:updated_time" content="2017-04-10T12:01:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Less">
-<meta name="twitter:description" content="Less基础操作">
+<meta name="twitter:title" content="Angular 指令">
+<meta name="twitter:description" content="Angular 指令">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/11/Less/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/10/Angular进阶/"/>
 
 
 
 
 
-  <title> Less | Vipcw's Home </title>
+  <title> Angular 指令 | Vipcw's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/Less/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/10/Angular进阶/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Vipcw">
@@ -324,7 +324,7 @@
             
             
               
-                Less
+                Angular 指令
               
             
           </h1>
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T11:41:41+08:00">
-                2017-03-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-10T19:59:26+08:00">
+                2017-04-10
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/11/Less/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Less/" itemprop="commentCount"></span>
+                <a href="/2017/04/10/Angular进阶/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/10/Angular进阶/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +396,7 @@
 
           
               <div class="post-description">
-                  Less基础操作
+                  Angular 指令
               </div>
           
 
@@ -411,30 +411,13 @@
       
 
       
-        <h1 id="初识less"><a href="#初识less" class="headerlink" title="初识less"></a>初识less</h1><h4 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h4><p>koala</p>
-<p>.less -&gt; .css</p>
-<h4 id="输出方式"><a href="#输出方式" class="headerlink" title="输出方式"></a>输出方式</h4><p>normal:普通css</p>
-<p>compress:压缩过的css</p>
-<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*我会被编译的*/</div><div class="line">    </div><div class="line">//我不会被编译</div></pre></td></tr></table></figure>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// @变量名：值;</div><div class="line">@test_width:300px;</div><div class="line"></div><div class="line">// 使用</div><div class="line">.body&#123;</div><div class="line">    width: @test_width;</div><div class="line">    height: @test_width;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h1><h4 id="纯class混合"><a href="#纯class混合" class="headerlink" title="纯class混合"></a>纯class混合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.box&#123;</div><div class="line">    .border;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.border&#123;</div><div class="line">    border:solid 5px pink;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.box&#123;</div><div class="line">    border:solid 5px pnik;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="带参数混合"><a href="#带参数混合" class="headerlink" title="带参数混合"></a>带参数混合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_02(@border_width)&#123;</div><div class="line">    border:solid yellow @border_width;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_hunhe&#123;</div><div class="line">    .border_02(30px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_hunhe &#123;</div><div class="line">  border: solid yellow 30px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="不带参数混合-使用默认参数"><a href="#不带参数混合-使用默认参数" class="headerlink" title="不带参数混合(使用默认参数)"></a>不带参数混合(使用默认参数)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_radius(@radius:5px)&#123;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    border-radius: @radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.radius_test&#123;</div><div class="line">    .border_radius(10px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.radius_test&#123;</div><div class="line">    -webkit-border-radius: 10px;</div><div class="line">    -moz-border-radius: 10pxx;</div><div class="line">    border-radius: 10px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.pos(r)&#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.pos(a)&#123;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.pos(f)&#123;</div><div class="line">    position: fixed;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pipei&#123;</div><div class="line">    .pos(r);</div><div class="line">&#125;</div><div class="line">.pipei2&#123;</div><div class="line">    .pos(a);</div><div class="line">&#125;</div><div class="line">.pipei3&#123;</div><div class="line">    .pos(f);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.pipei&#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.pipei2&#123;</div><div class="line">    position: absolute;</div><div class="line">&#125;</div><div class="line">.pipei3&#123;</div><div class="line">    position: fixed;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">@test_01:300px;</div><div class="line"></div><div class="line">.box_02&#123;</div><div class="line">    width: (@test_01 - 20) * 5;</div><div class="line">    color: #ccc - 10;   </div><div class="line">    // 颜色转化成255,255,255计算</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.box_02 &#123;</div><div class="line">  width: 1400px;</div><div class="line">  color: #c2c2c2; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.list&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 600px</div><div class="line">    </div><div class="line">    li&#123;</div><div class="line">        height: 30px;</div><div class="line">        height: 30px;</div><div class="line">        </div><div class="line">        a&#123;</div><div class="line">            float: left;</div><div class="line">            // &amp;代表他的上一层选择器</div><div class="line">            &amp;:hover&#123;</div><div class="line">                color: red;</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.list &#123;</div><div class="line">  width: 600px;</div><div class="line">  height: 600px;</div><div class="line">&#125;</div><div class="line">.list li &#123;</div><div class="line">  height: 30px;</div><div class="line">&#125;</div><div class="line">.list li a &#123;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line">.list li a:hover &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h1><p>包含了所有传进来的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_arg(@w:30px,@c:red,@xx:solid)&#123;</div><div class="line">    border: @arguments;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_arg&#123;</div><div class="line">    .border_arg(40px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_arg &#123;</div><div class="line">  border: 40px red solid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="避免编译"><a href="#避免编译" class="headerlink" title="避免编译"></a>避免编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.test_03&#123;</div><div class="line">    width: ~&apos;calc(300px-30)&apos;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_03 &#123;</div><div class="line">  width: calc(300px-30);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="important关键字"><a href="#important关键字" class="headerlink" title="!important关键字"></a>!important关键字</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">=====less=====</div><div class="line"></div><div class="line">.border_radius(@radius:5px)&#123;</div><div class="line">    -webkit-border-radius: @radius;</div><div class="line">    -moz-border-radius: @radius;</div><div class="line">    border-radius: @radius;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.test_impotant&#123;</div><div class="line">    .border_radius()!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">=====css=====</div><div class="line"></div><div class="line">.test_impotant &#123;</div><div class="line">  -webkit-border-radius: 5px !important;</div><div class="line">  -moz-border-radius: 5px !important;</div><div class="line">  border-radius: 5px !important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="controller-控制器"><a href="#controller-控制器" class="headerlink" title="controller 控制器"></a>controller 控制器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;!--在一个页面里只能存在一个ng-app=&quot;&quot;,多了就只执行第一个,但是在一个页面里可以划分为不同的部分,(使用不同的控制器(controller)进行划分)--&gt;</div><div class="line">    &lt;!--每个控制器都有一个域,这个域使用$scope表示--&gt;</div><div class="line">    &lt;!--&lt;div ng-app=&quot;myapp&quot; ng-controller=&quot;mycontroller&quot; &gt;</div><div class="line">    	&lt;button ng-click=&quot;clickFn()&quot;&gt;点击&lt;/button&gt;</div><div class="line">    	&lt;input type=&quot;text&quot; ng-model=&quot;arr[2]&quot;/&gt;</div><div class="line">    	hello,&#123;&#123;arr[2]&#125;&#125;</div><div class="line">    &lt;/div&gt;	--&gt;</div><div class="line">    &lt;div ng-app=&quot;myapp&quot;&gt;</div><div class="line">    	&lt;div ng-controller=&quot;mycon1&quot;&gt;</div><div class="line">            &#123;&#123;name&#125;&#125;</div><div class="line">    	&lt;/div&gt;</div><div class="line">    	&lt;div ng-controller=&quot;mycon2&quot;&gt;</div><div class="line">            &#123;&#123;name&#125;&#125;</div><div class="line">    	&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;angular.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    // 获取一下app   中括号表示引入的依赖</div><div class="line">    var app = angular.module(&quot;myapp&quot;,[]);</div><div class="line">    </div><div class="line">    // 设置控制器</div><div class="line">    app.controller(&quot;mycon1&quot;,function($scope)&#123;</div><div class="line">    	$scope.name = &quot;zhangsan&quot;;</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    app.controller(&quot;mycon2&quot;,function($scope)&#123;</div><div class="line">    	$scope.name = &quot;lisi&quot;;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="directive-自定义属性"><a href="#directive-自定义属性" class="headerlink" title="directive 自定义属性"></a>directive 自定义属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-app=&quot;myApp&quot;&gt;</div><div class="line">        &lt;div ng-controller=&quot;myController&quot;&gt;</div><div class="line">            &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;</div><div class="line">            &lt;ng-hello&gt;&lt;/ng-hello&gt;</div><div class="line">            &lt;div ng-hello=&quot;&quot;&gt;&lt;/div&gt;</div><div class="line">            &lt;div class=&quot;ng-hello&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    //    封装自定义属性</div><div class="line">    var app =  angular.module(&quot;myApp&quot;,[]);</div><div class="line">    app.controller(&quot;myController&quot;,function($scope)&#123;</div><div class="line">        $scope.name=&quot;div&quot;;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    //创建指令(对常用的dom结构和功能进行分装)</div><div class="line">    app.directive(&quot;ngHello&quot;,function()&#123;</div><div class="line">        return &#123;</div><div class="line">            // restrict : &quot;A&quot;,//属性类型</div><div class="line">            // restrict : &quot;E&quot;,//标签类型</div><div class="line">            // restrict : &quot;C&quot;,//class类型</div><div class="line">            restrict:  &quot;M&quot;, //作为注释使用</div><div class="line">            // restrict:默认为EA</div><div class="line">            restrict : &quot;AEC&quot;,//全部类型</div><div class="line">            template : &quot;&lt;h1&gt;&lt;a href=&apos;###&apos;&gt;我是一个超文本链接&lt;/a&gt;&lt;/h1&gt;&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h1><h4 id="请求文件内容"><a href="#请求文件内容" class="headerlink" title="请求文件内容"></a>请求文件内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myapp&quot;,[&quot;ngSanitize&quot;]);</div><div class="line">app.controller(&quot;mycon&quot;,function($scope,$http)&#123;</div><div class="line">    $http.get(&quot;test.txt&quot;).then(function(res)&#123;</div><div class="line">    	// 成功的回调</div><div class="line">    	$scope.content = res.data;</div><div class="line">    &#125;,function(err)&#123;</div><div class="line">    	// 失败的回调</div><div class="line">    	console.log(err);</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="ngSanitize"><a href="#ngSanitize" class="headerlink" title="ngSanitize"></a>ngSanitize</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;myapp&quot; ng-controller=&quot;mycon&quot;&gt;</div><div class="line">    &lt;div ng-bind-html=&quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;angular-sanitize.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var app = angular.module(&quot;myapp&quot;,[&quot;ngSanitize&quot;]);</div><div class="line">    app.controller(&quot;mycon&quot;,function($scope,$location)&#123;</div><div class="line">        &lt;!--获取url--&gt;</div><div class="line">    	console.log($location.absUrl());</div><div class="line">    	</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="仿写百度搜索下拉栏"><a href="#仿写百度搜索下拉栏" class="headerlink" title="仿写百度搜索下拉栏"></a>仿写百度搜索下拉栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;myapp&quot; ng-controller=&quot;mycon&quot;&gt;</div><div class="line">    &lt;input type=&quot;text&quot; ng-model=&quot;name&quot; ng-change=&quot;change()&quot; /&gt;</div><div class="line">    &lt;hr /&gt;</div><div class="line">    &lt;table class=&quot;table table-striped&quot;&gt;</div><div class="line">    	&lt;tr ng-repeat=&quot;x in arr&quot;&gt;</div><div class="line">            &lt;td&gt;&#123;&#123;x&#125;&#125;&lt;/td&gt;</div><div class="line">    	&lt;/tr&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;angular-sanitize.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var app = angular.module(&quot;myapp&quot;,[]);</div><div class="line">    app.controller(&quot;mycon&quot;,function($scope,$http)&#123;</div><div class="line">    	$scope.change = function()&#123;</div><div class="line">    	    &lt;!--jsonp--&gt;</div><div class="line">            $http.jsonp(&quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&quot;+$scope.name+&quot;&amp;cb=JSON_CALLBACK&quot;).then(function(res)&#123;</div><div class="line">                console.log(res.data);</div><div class="line">                console.log(res.data.s);</div><div class="line">                $scope.arr = res.data.s;</div><div class="line">            &#125;)</div><div class="line">    	&#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="定时器-timeout-interval"><a href="#定时器-timeout-interval" class="headerlink" title="定时器 $timeout $interval"></a>定时器 $timeout $interval</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&quot;myapp&quot;,[]);</div><div class="line">app.controller(&quot;mycon&quot;,function($scope,$timeout)&#123;</div><div class="line">    $timeout(function()&#123;</div><div class="line">        console.log(&quot;a你好啊&quot;);</div><div class="line">    &#125;,2000)</div><div class="line">&#125;)</div><div class="line">		</div><div class="line">app.controller(&quot;mycon&quot;,function($scope,$interval)&#123;</div><div class="line">    $interval(function()&#123;</div><div class="line">    	console.log(&quot;你好啊&quot;);</div><div class="line">    &#125;,100)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -478,7 +461,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Less/" rel="tag"># Less</a>
+            <a href="/tags/AngularJS/" rel="tag"># AngularJS</a>
           
         </div>
       
@@ -491,14 +474,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/04/10/Angular指令/" rel="next" title="Angular 指令">
+                <i class="fa fa-chevron-left"></i> Angular 指令
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_event/" rel="prev" title="Node_event">
-                Node_event <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/10/Angular初识/" rel="prev" title="Angular 初识">
+                Angular 初识 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,8 +512,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/11/Less/"
-           data-title="Less" data-url="http://yoursite.com/2017/03/11/Less/">
+      <div class="ds-thread" data-thread-key="2017/04/10/Angular进阶/"
+           data-title="Angular 指令" data-url="http://yoursite.com/2017/04/10/Angular进阶/">
       </div>
     
   </div>
@@ -665,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识less"><span class="nav-number">1.</span> <span class="nav-text">初识less</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译工具"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">编译工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出方式"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">输出方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">注释</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#混合"><span class="nav-number">3.</span> <span class="nav-text">混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#纯class混合"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">纯class混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带参数混合"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">带参数混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不带参数混合-使用默认参数"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">不带参数混合(使用默认参数)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匹配模式"><span class="nav-number">4.</span> <span class="nav-text">匹配模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算"><span class="nav-number">5.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套"><span class="nav-number">6.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#arguments"><span class="nav-number">7.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#避免编译"><span class="nav-number">8.</span> <span class="nav-text">避免编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#important关键字"><span class="nav-number">9.</span> <span class="nav-text">!important关键字</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#controller-控制器"><span class="nav-number">1.</span> <span class="nav-text">controller 控制器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#directive-自定义属性"><span class="nav-number">2.</span> <span class="nav-text">directive 自定义属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Server"><span class="nav-number">3.</span> <span class="nav-text">Server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求文件内容"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">请求文件内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ngSanitize"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">ngSanitize</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仿写百度搜索下拉栏"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">仿写百度搜索下拉栏</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定时器-timeout-interval"><span class="nav-number">4.</span> <span class="nav-text">定时器 $timeout $interval</span></a></li></ol></div>
             
 
           </div>

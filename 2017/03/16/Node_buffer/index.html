@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/16/Node_buffer/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
 <meta property="og:description" content="Node_buffer">
-<meta property="og:updated_time" content="2017-03-16T09:19:54.879Z">
+<meta property="og:updated_time" content="2017-04-10T11:58:48.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node_buffer">
 <meta name="twitter:description" content="Node_buffer">
@@ -411,12 +411,7 @@
       
 
       
-        <p>buffer 一种缓存的数据格式，缓存区<br>出现原因，js本身只有二进制的传输，只有字符串的传输 为了保存和处理二进制数据<br>buffer 的形势是一串数组 而数组中的每一项是一个以16进制展示的8位字节<br>Buffer 是一个类，他能实例出一个全局对象<br>buffer 的每一位取值范围0-255</p>
-<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><h4 id="直接创建-由系统自动生成"><a href="#直接创建-由系统自动生成" class="headerlink" title="直接创建 由系统自动生成"></a>直接创建 由系统自动生成</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var buff = new Buffer(12);   // 参数为number 表示buffer的长度</div></pre></td></tr></table></figure>
-<h4 id="填充值"><a href="#填充值" class="headerlink" title="填充值"></a>填充值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">buff.fill(&quot;a&quot;,3,6);</div></pre></td></tr></table></figure>
-<h4 id="通过数组创建"><a href="#通过数组创建" class="headerlink" title="通过数组创建"></a>通过数组创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var buff2 = new Buffer([1,34,074,0xa6])</div><div class="line">var buff3 = new Buffer(&quot;今天天气很晴朗&quot;)</div><div class="line">var buff4 = new Buffer([0xe4,0xbb,0x8a,0xe5]);</div><div class="line">var buff5 = new Buffer([0xa4,0xa9,0xe5,0xa4,0xa9]);</div><div class="line">console.log(buff4.toString())</div></pre></td></tr></table></figure>
-<h4 id="把buffer-拼接起来-占用内存高"><a href="#把buffer-拼接起来-占用内存高" class="headerlink" title="把buffer 拼接起来  占用内存高"></a>把buffer 拼接起来  占用内存高</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">console.log(Buffer.concat([buff4,buff5]).toString())</div><div class="line"></div><div class="line">var StringDecoder = require(&quot;string_decoder&quot;).StringDecoder; // 返回一个类</div><div class="line"></div><div class="line">var decoder = new StringDecoder();</div><div class="line">var str = decoder.write(buff4);</div><div class="line">console.log(str)</div><div class="line"></div><div class="line">var str2 = decoder.write(buff5);</div><div class="line">console.log(str2)</div></pre></td></tr></table></figure>
-
+        
       
     </div>
 
@@ -473,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/16/Node_createServer/" rel="next" title="Node_createServer">
-                <i class="fa fa-chevron-left"></i> Node_createServer
+              <a href="/2017/03/16/Node_stream/" rel="next" title="Node_stream">
+                <i class="fa fa-chevron-left"></i> Node_stream
               </a>
             
           </div>
@@ -482,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/16/Node_path/" rel="prev" title="Node_path">
+                Node_path <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,17 +530,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -556,7 +546,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -574,7 +564,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -637,22 +627,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建"><span class="nav-number">1.</span> <span class="nav-text">创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接创建-由系统自动生成"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">直接创建 由系统自动生成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#填充值"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">填充值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过数组创建"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">通过数组创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把buffer-拼接起来-占用内存高"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">把buffer 拼接起来  占用内存高</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
