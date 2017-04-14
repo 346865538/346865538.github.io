@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/10/Angular指令/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
 <meta property="og:description" content="Angular 指令">
-<meta property="og:updated_time" content="2017-04-10T12:00:41.000Z">
+<meta property="og:updated_time" content="2017-04-13T13:48:48.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular 指令">
 <meta name="twitter:description" content="Angular 指令">
@@ -411,10 +411,13 @@
       
 
       
-        <h1 id="ng-click-amp-ng-if-amp-ng-show"><a href="#ng-click-amp-ng-if-amp-ng-show" class="headerlink" title="ng-click &amp; ng-if &amp; ng-show"></a>ng-click &amp; ng-if &amp; ng-show</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;isShow=true&quot;&gt;</div><div class="line">    &lt;button ng-click=&quot;isShow=!isShow&quot;&gt;点击显示/隐藏&lt;/button&gt;</div><div class="line">    &lt;!--ng-if操作的节点的插入和移出--&gt;</div><div class="line">    &lt;!--ng-show操作节点的display block和none--&gt;</div><div class="line">    &lt;div ng-show=&quot;isShow&quot; class=&quot;div1&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div ng-hide=&quot;isShow&quot; class=&quot;div2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h1 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!--数组--&gt;</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;arr=[3,4,5]&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--获取 下标值 和 内容--&gt;</div><div class="line">        &lt;li ng-repeat=&quot;(index,item) in arr&quot;&gt;&#123;&#123;index+&quot;=&gt;&quot;+item&#125;&#125;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;!--对象--&gt;</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;person=&#123;name:&apos;zhangsan&apos;,age:18&#125;&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--获取 下标值 和 内容--&gt;</div><div class="line">        &lt;li ng-repeat=&quot;(index,item) in person&quot;&gt;&#123;&#123;index+&quot;=&gt;&quot;+item&#125;&#125;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h1 id="ng-class"><a href="#ng-class" class="headerlink" title="ng-class"></a>ng-class</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;ischange=true;&quot;&gt;</div><div class="line">	&lt;!--点击改变ischange的值--&gt;</div><div class="line">	&lt;button ng-click=&quot;ischange=!ischange&quot;&gt;点击改变样式&lt;/button&gt;</div><div class="line">	&lt;!--根据ischange的值来给className--&gt;</div><div class="line">	&lt;div class=&quot;div1&quot; ng-class=&quot;&#123;true:&apos;act&apos;,false:&apos;inact&apos;&#125;[ischange]&quot;&gt;我是样式&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h1 id="ng-include"><a href="#ng-include" class="headerlink" title="ng-include"></a>ng-include</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;&quot;&gt;</div><div class="line">    &lt;div ng-include=&quot;&apos;header.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div ng-include=&quot;&apos;footer.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+        <h1 id="AngularJS-指令"><a href="#AngularJS-指令" class="headerlink" title="AngularJS 指令"></a>AngularJS 指令</h1><p>AngularJS 通过指令来添加功能<br>AngularJS 可以自定义指令</p>
+<h1 id="ng-click-amp-ng-if-amp-ng-show"><a href="#ng-click-amp-ng-if-amp-ng-show" class="headerlink" title="ng-click &amp; ng-if &amp; ng-show"></a>ng-click &amp; ng-if &amp; ng-show</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// ng-if操作的节点的插入和移出</div><div class="line">// ng-show操作节点的 display 的 block 和 none</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;isShow=true&quot;&gt;</div><div class="line">    &lt;button ng-click=&quot;isShow=!isShow&quot;&gt;点击显示/隐藏&lt;/button&gt;</div><div class="line">    &lt;div ng-show=&quot;isShow&quot; class=&quot;div1&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div ng-hide=&quot;isShow&quot; class=&quot;div2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h1 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// 数组</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;arr=[1,2,3]&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--获取 下标值 和 内容--&gt;</div><div class="line">        &lt;li ng-repeat=&quot;(index,item) in arr&quot;&gt;&#123;&#123;index+&quot;=&gt;&quot;+item&#125;&#125;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">// 对象</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;person=&#123;name:&apos;zhangsan&apos;,age:18&#125;&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--获取 下标值 和 内容--&gt;</div><div class="line">        &lt;li ng-repeat=&quot;(index,item) in person&quot;&gt;&#123;&#123;index+&quot;=&gt;&quot;+item&#125;&#125;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h1 id="ng-class"><a href="#ng-class" class="headerlink" title="ng-class"></a>ng-class</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 根据ischange的值来给className</div><div class="line">&lt;div ng-app=&quot;&quot; ng-init=&quot;ischange=true;&quot;&gt;</div><div class="line">	&lt;button ng-click=&quot;ischange=!ischange&quot;&gt;点击改变样式&lt;/button&gt;</div><div class="line">	&lt;div class=&quot;div1&quot; ng-class=&quot;&#123;true:&apos;act&apos;,false:&apos;inact&apos;&#125;[ischange]&quot;&gt;我是样式&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h1 id="ng-include"><a href="#ng-include" class="headerlink" title="ng-include"></a>ng-include</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 插入html文件</div><div class="line">&lt;body ng-app=&quot;&quot;&gt;</div><div class="line">    &lt;div ng-include=&quot;&apos;header.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;div ng-include=&quot;&apos;footer.html&apos;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h1 id="更多指令"><a href="#更多指令" class="headerlink" title="更多指令"></a>更多指令</h1><p>AnularJS-指令参考手册 : <a href="http://www.runoob.com/angularjs/angularjs-reference.html" target="_blank" rel="external">http://www.runoob.com/angularjs/angularjs-reference.html</a></p>
+
       
     </div>
 
@@ -471,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/10/Angular进阶/" rel="next" title="Angular 进阶">
-                <i class="fa fa-chevron-left"></i> Angular 进阶
+              <a href="/2017/03/16/Node_path/" rel="next" title="Node_path">
+                <i class="fa fa-chevron-left"></i> Node_path
               </a>
             
           </div>
@@ -481,8 +484,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/10/Angular初识/" rel="prev" title="Angular 初识">
-                Angular 初识 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/10/Angular进阶/" rel="prev" title="Angular 进阶">
+                Angular 进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -558,7 +561,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +579,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -649,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-click-amp-ng-if-amp-ng-show"><span class="nav-number">1.</span> <span class="nav-text">ng-click & ng-if & ng-show</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-repeat"><span class="nav-number">2.</span> <span class="nav-text">ng-repeat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-class"><span class="nav-number">3.</span> <span class="nav-text">ng-class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-include"><span class="nav-number">4.</span> <span class="nav-text">ng-include</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AngularJS-指令"><span class="nav-number">1.</span> <span class="nav-text">AngularJS 指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-click-amp-ng-if-amp-ng-show"><span class="nav-number">2.</span> <span class="nav-text">ng-click & ng-if & ng-show</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-repeat"><span class="nav-number">3.</span> <span class="nav-text">ng-repeat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-class"><span class="nav-number">4.</span> <span class="nav-text">ng-class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ng-include"><span class="nav-number">5.</span> <span class="nav-text">ng-include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多指令"><span class="nav-number">6.</span> <span class="nav-text">更多指令</span></a></li></ol></div>
             
 
           </div>

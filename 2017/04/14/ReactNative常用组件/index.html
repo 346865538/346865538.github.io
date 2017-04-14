@@ -1,0 +1,955 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="ReactNative 常用组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactNative 常用组件">
+<meta property="og:url" content="http://yoursite.com/2017/04/14/ReactNative常用组件/index.html">
+<meta property="og:site_name" content="Vipcw's Home">
+<meta property="og:description" content="ReactNative 常用组件">
+<meta property="og:updated_time" content="2017-04-14T12:34:38.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ReactNative 常用组件">
+<meta name="twitter:description" content="ReactNative 常用组件">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与 ${query} 相关的内容","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/14/ReactNative常用组件/"/>
+
+
+
+
+
+  <title> ReactNative 常用组件 | Vipcw's Home </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Vipcw's Home</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  <!-- 添加  theme.algolia_search.enable -->
+  
+
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> 
+
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> 
+
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> 
+
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> 
+
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> 
+
+            
+            关于
+          </a>
+        </li>
+      
+
+
+  
+    <li class="menu-item menu-item-search">
+      
+        <a href="javascript:;" class="popup-trigger">
+
+<!-- 添加 开始 -->
+
+
+      
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+        
+        搜索
+      </a>
+    </li>
+  
+</ul>
+
+  
+
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav> </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/14/ReactNative常用组件/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Vipcw">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Vipcw's Home">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Vipcw's Home" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ReactNative 常用组件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-14T19:44:02+08:00">
+                2017-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/14/ReactNative常用组件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/14/ReactNative常用组件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  ReactNative 常用组件
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="TouchableHighlight"><a href="#TouchableHighlight" class="headerlink" title="TouchableHighlight"></a>TouchableHighlight</h1><p>TouchableHighlight组件用于封装视图 使其可以正确响应触摸操作 当按下的时候 封装的视图的不透明度会降低 同时会有一个底层的颜色透过而被用户看到 使得视图变暗或变亮<br>TouchableHighlight只支持一个子节点 如果需要包含多个子组件 可以用一个View来包装它们<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &quot;react&quot;;</div><div class="line">import &#123;</div><div class="line">    TouchableHighlight   // 需要在头部引入TouchableHighlight组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">// underlayColor 有触摸操作时显示出来的底层的颜色</div><div class="line">&lt;TouchableHighlight underlayColor=&#123;&quot;red&quot;&#125;&gt;</div><div class="line">    &lt;Text&gt;按钮&lt;/Text&gt;</div><div class="line">&lt;/TouchableHighlight&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="TouchableOpacity"><a href="#TouchableOpacity" class="headerlink" title="TouchableOpacity"></a>TouchableOpacity</h1><p>TouchableHighlight组件用于封装视图 使其可以正确响应触摸操作 当按下的时候 封装的视图的不透明度会降低 这个过程并不会真正改变视图层级<br>此组件与TouchableHighlight的区别在于并没有额外的颜色变化 更适于一般场景<br>TouchableOpacity只支持一个子节点 如果需要包含多个子组件 可以用一个View来包装它们<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    TouchableOpacity   // 需要在头部引入TouchableOpacity组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">// underlayColor 有触摸操作时显示出来的底层的颜色</div><div class="line">&lt;TouchableOpacity&gt;</div><div class="line">    &lt;Text&gt;按钮&lt;/Text&gt;</div><div class="line">&lt;/TouchableOpacity&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="TextInput"><a href="#TextInput" class="headerlink" title="TextInput"></a>TextInput</h1><p>TextInput允许用户在应用中通过键盘输入文本的基本组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    TextInput   // 需要在头部引入TextInput组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">// returnKeyType 决定&apos;确定&apos;按钮显示的内容</div><div class="line">&lt;TextInput placeholder=&#123;&quot;请输入&quot;&#125; returnKeyType=&#123;&quot;search&quot;&#125;&gt;&lt;/TextInput&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    Image   // 需要在头部引入Image组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">// source 图片路径</div><div class="line">// 本地地址：source=&#123;require(&quot;&quot;)&#125;</div><div class="line">// 网络地址：source=&#123;&#123;uri:&quot;&quot;&#125;&#125;</div><div class="line">&lt;Image source=&#123;require(&quot;./abc.jpg&quot;)&#125; /&gt;</div></pre></td></tr></table></figure>
+<h1 id="ScrollView-amp-amp-RefreshControl"><a href="#ScrollView-amp-amp-RefreshControl" class="headerlink" title="ScrollView  &amp;&amp;  RefreshControl"></a>ScrollView  &amp;&amp;  RefreshControl</h1><p>ScrollView是一个包装了平台的滚动视图组件 同时还集成了触摸锁定的’响应者’系统<br>ScrollView 必须确定一个高度</p>
+<p>RefreshControl用在ScrollView内部 为其添加下拉刷新的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    ScrollView   // 需要在头部引入ScrollView组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">&lt;ScrollView onScrollBeginDrag=&#123;&#125; onScrollEndDrag=&#123;&#125; onMomentumScrollBegin=&#123;&#125; onMomentumScrollEnd=&#123;&#125; refreshControl=&#123;</div><div class="line">    &lt;RefreshControl refreshing=&#123;false&#125; title=&#123;&quot;正在刷新&quot;&#125; onRefresh=&#123;&#125; /&gt;</div><div class="line">&#125;&gt;</div><div class="line">    &lt;View style=&#123;[styles.item,styles.item1]&#125;&gt;&lt;/View&gt;</div><div class="line">    &lt;View style=&#123;[styles.item,styles.item2]&#125;&gt;&lt;/View&gt;</div><div class="line">    &lt;View style=&#123;[styles.item,styles.item3]&#125;&gt;&lt;/View&gt;</div><div class="line">&lt;/ScrollView&gt;</div><div class="line"></div><div class="line">onScrollBeginDrag 开始拖拽触发的方法</div><div class="line">onScrollEndDrag 结束拖拽触发的方法</div><div class="line">onMomentumScrollBegin 滚动开始触发的方法</div><div class="line">onMomentumScrollEnd 滚动结束触发的方法</div><div class="line">refresh 请求数据触发的方法</div></pre></td></tr></table></figure></p>
+<h1 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h1><p>用于显示一个可以垂直滚动的变化的数据列表<br>1.创建一个ListView.DataSource数据源<br>2.给它传递一个普通的数据数组<br>3.再使用数据源来实例化一个ListView组件 并且定义它的renderRow回调函数 这个函数会接受数组中的每个数据作为参数 返回一个可渲染的组件（作为listview的每一行）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    ListView   // 需要在头部引入ListView组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">var news = [</div><div class="line">    &apos;news1&apos;,</div><div class="line">    &apos;news2&apos;,</div><div class="line">    &apos;news3&apos;,</div><div class="line">    &apos;news4&apos;,</div><div class="line">    &apos;news5&apos;,</div><div class="line">    &apos;news6&apos;,</div><div class="line">    &apos;news7&apos;</div><div class="line">]</div><div class="line"></div><div class="line">var ListViewTest = React.createClass(&#123;</div><div class="line">    getInitialState:function()&#123;</div><div class="line">        // 实例化数据源</div><div class="line">        var ds = new ListView.DataSource(&#123;</div><div class="line">            // 通过比较新数据与旧数据 确定是否更新行组件</div><div class="line">            rowHasChanged:function(oldData,newData)&#123;</div><div class="line">                return oldData != newData</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        return &#123;</div><div class="line">            // 绑定得到的数据源</div><div class="line">            dataSource: ds.cloneWithRows(news)</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    _renderRow:function(rowData)&#123;</div><div class="line">        // 每一行要展示的数据就是调用该函数时，自动传过来的参数</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text&gt;&#123;rowData&#125;&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;,</div><div class="line">    render:function()&#123;</div><div class="line">        // renderRow 展示出列表中的每一行 datasource 赋予该列表需要的数据</div><div class="line">        return &lt;ListView dataSource=&#123;this.state.dataSource&#125; renderRow=&#123;this._renderRow&#125;/&gt;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="WebView"><a href="#WebView" class="headerlink" title="WebView"></a>WebView</h1><p>网络视图 可以在这个内部引入别的网页 使用source<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    WebView   // 需要在头部引入WebView组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">&lt;WebView source=&#123;&#123;url:&quot;&quot;&#125;&#125;&gt;&lt;/WebView&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="TabBarIOS"><a href="#TabBarIOS" class="headerlink" title="TabBarIOS"></a>TabBarIOS</h1><p>在IOS上使用的底部TabBar组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    TabBarIOS   // 需要在头部引入TabBarIOS组件</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">//引入三个TabBar的对应页面页面</div><div class="line">var a = require(&quot;./a&quot;);</div><div class="line">var b = require(&quot;./b&quot;);</div><div class="line">var c = require(&quot;./c&quot;);</div><div class="line"></div><div class="line">var TabBarTest = React.createClass(&#123;</div><div class="line">    getInitialState:function () &#123;</div><div class="line">        // 显示当前显示的标签</div><div class="line">        return &#123;</div><div class="line">            selectTab:&quot;a&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    changeTab:function (name) &#123;</div><div class="line">        this.setState(&#123;</div><div class="line">            selectTab:name</div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    render:function () &#123;</div><div class="line">        return (</div><div class="line">            &lt;TabBarIOS</div><div class="line">            	// 标签栏的背景颜色</div><div class="line">                barTintColor=&quot;black&quot;</div><div class="line">                // 当前被选中的标签图标的颜色</div><div class="line">                tintColor=&#123;&quot;orange&quot;&#125;</div><div class="line">                // 没有被选中的标签图标的颜色</div><div class="line">                unselectedItemTintColor=&#123;&quot;white&quot;&#125;</div><div class="line">            &gt;</div><div class="line">                &#123;/*下部的标签栏*/&#125;</div><div class="line">                &lt;TabBarIOS.Item</div><div class="line">                	// 选项的文字</div><div class="line">                    title=&quot;a&quot;</div><div class="line">                    // 选项的图标</div><div class="line">                    icon=&#123;require(&quot;./a.png&quot;)&#125;</div><div class="line">                    // 点击的时候触发切换内容事件</div><div class="line">                    onPress=&#123;this.changeTab.bind(this,&quot;a&quot;)&#125;</div><div class="line">                    // 确定哪个选项被选中</div><div class="line">                    selected=&#123;this.state.selectTab == &quot;a&quot;&#125;</div><div class="line">                &gt;</div><div class="line">                    &#123;/*选项的内容*/&#125;</div><div class="line">                    &lt;a/&gt;</div><div class="line">                &lt;/TabBarIOS.Item&gt;</div><div class="line">                &lt;TabBarIOS.Item</div><div class="line">                    title=&quot;b&quot;</div><div class="line">                    icon=&#123;require(&quot;./b.png&quot;)&#125;</div><div class="line">                    onPress=&#123;this.changeTab.bind(this,&quot;b&quot;)&#125;</div><div class="line">                    selected=&#123;this.state.selectTab == &quot;b&quot;&#125;</div><div class="line">                &gt;</div><div class="line">                    &lt;b/&gt;</div><div class="line">                &lt;/TabBarIOS.Item&gt;</div><div class="line">                &lt;TabBarIOS.Item</div><div class="line">                    title=&quot;c&quot;</div><div class="line">                    icon=&#123;require(&quot;./c.png&quot;)&#125;</div><div class="line">                    onPress=&#123;this.changeTab.bind(this,&quot;c&quot;)&#125;</div><div class="line">                    selected=&#123;this.state.selectTab == &quot;c&quot;&#125;</div><div class="line">                &gt;</div><div class="line">                    &lt;c/&gt;</div><div class="line">                &lt;/TabBarIOS.Item&gt;</div><div class="line">            &lt;/TabBarIOS&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p>使用Navigator可以让你在应用的不同页面间进行切换 Navigator通过路由对象来分辨不同的页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    Text,</div><div class="line">    View,</div><div class="line">    Navigator,   // 需要在头部引入TabBarIOS组件</div><div class="line">    TextInput,</div><div class="line">    TouchableOpacity</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">// 在进行导航时 需要先构建一些页面 使用Navigator</div><div class="line">// 创建FirstPage 和 SecondPage </div><div class="line">var FirstPage = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;TouchableOpacity onPress=&#123;this.changePage&#125;&gt;</div><div class="line">                    &lt;Text&gt;跳转到下一页&lt;/Text&gt;</div><div class="line">                &lt;/TouchableOpacity&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;,</div><div class="line">    changePage()&#123;</div><div class="line">        var nextRoute =&#123;</div><div class="line">         	// 指定下一页显示的内容</div><div class="line">            component: SecondPage</div><div class="line">        &#125;</div><div class="line">        // 添加的是路由</div><div class="line">        this.props.navigator.push(nextRoute);</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var SecondPage = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        return(</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;TouchableOpacity onPress=&#123;this.changePage&#125;&gt;</div><div class="line">                    &lt;Text&gt;回到第一页&lt;/Text&gt;</div><div class="line">                &lt;/TouchableOpacity&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;,</div><div class="line">    changePage()&#123;</div><div class="line">        var nextRoute =&#123;</div><div class="line">        	// 指定下一页显示的内容</div><div class="line">            component: FirstPage</div><div class="line">        &#125;</div><div class="line">        // 添加的是路由</div><div class="line">        this.props.navigator.pop();</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var NavTest = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        var rootRoute = &#123;</div><div class="line">        	// 显示第一页</div><div class="line">            component: FirstPage</div><div class="line">        &#125;</div><div class="line">        return (</div><div class="line">            &lt;Navigator</div><div class="line">                // 1.初始路由设置</div><div class="line">                initialRoute=&#123;rootRoute&#125;</div><div class="line">                // 2.设置页面切换方式</div><div class="line">                configureScene=&#123;(route)=&gt;Navigator.SceneConfigs.PushFromRight&#125;</div><div class="line">                // 3.决定渲染的场景(页面)</div><div class="line">                renderScene=&#123;(route,navigator)=&gt;&#123;</div><div class="line">                    // 4.找到我们要渲染的页面</div><div class="line">                    var Component = route.component;</div><div class="line">                    // 5.渲染时需要把route和navigator作为属性传入</div><div class="line">                    return &lt;Component route=&#123;route&#125; navigator=&#123;navigator&#125;/&gt;</div><div class="line">                &#125;&#125;</div><div class="line">            /&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><p>发起网络请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">fetch(&quot;http://m.maoyan.com/movie/list.json?type=hot&amp;offset=0&amp;limit=10&quot;)</div><div class="line">.then((res)=&gt;res.json())</div><div class="line">.then((res)=&gt; &#123;</div><div class="line">	// 请求成功的回调</div><div class="line">&#125;)</div><div class="line">.catch((err)=&gt; &#123;</div><div class="line">	// 请求失败的回调</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="封装一些开发中常用的组件状态、属性和方法"><a href="#封装一些开发中常用的组件状态、属性和方法" class="headerlink" title="封装一些开发中常用的组件状态、属性和方法"></a>封装一些开发中常用的组件状态、属性和方法</h1><pre><code>1.Loading 组件的使用
+2.Fetch 请求(get)
+3.设备的宽和高
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">import React, &#123; Component &#125; from &apos;react&apos;;</div><div class="line">import &#123;</div><div class="line">    AppRegistry,</div><div class="line">    StyleSheet,</div><div class="line">    Dimensions,</div><div class="line">    ActivityIndicator</div><div class="line">&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">var Util = &#123;</div><div class="line">    windowSize:&#123;</div><div class="line">        width: Dimensions.get(&quot;window&quot;).width,</div><div class="line">        height: Dimensions.get(&quot;window&quot;).height</div><div class="line">    &#125;,</div><div class="line">    getRequest(url,succCb,failCb)&#123;</div><div class="line">        fetch(url).then(function(res)&#123;</div><div class="line">            return res.json()</div><div class="line">        &#125;).then(function(res)&#123;</div><div class="line">            cussCb(res)</div><div class="line">        &#125;).catch(function(err)&#123;</div><div class="line">            failCb(err)</div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    loading: &lt;ActivityIndicator style=&#123;&#123;marginTop:100&#125;&#125; /&gt;</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = Util;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/wechatpay.png" alt="Vipcw WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/alipay.png" alt="Vipcw Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/13/Vue初识/" rel="next" title="Vue 初识">
+                <i class="fa fa-chevron-left"></i> Vue 初识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/8888/01/01/Welcome/" rel="prev" title="Welcome">
+                Welcome <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/14/ReactNative常用组件/"
+           data-title="ReactNative 常用组件" data-url="http://yoursite.com/2017/04/14/ReactNative常用组件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+ 
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Vipcw" />
+          <p class="site-author-name" itemprop="name">Vipcw</p>
+           
+              <p class="site-description motion-element" itemprop="description">❤❤亦如黎明中的花朵❤❤</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/346865538" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1727566524" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/" title="Hexo" target="_blank">Hexo</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/iissnan/hexo-theme-next" title="NexT" target="_blank">NexT</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TouchableHighlight"><span class="nav-number">1.</span> <span class="nav-text">TouchableHighlight</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TouchableOpacity"><span class="nav-number">2.</span> <span class="nav-text">TouchableOpacity</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TextInput"><span class="nav-number">3.</span> <span class="nav-text">TextInput</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Image"><span class="nav-number">4.</span> <span class="nav-text">Image</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ScrollView-amp-amp-RefreshControl"><span class="nav-number">5.</span> <span class="nav-text">ScrollView  &&  RefreshControl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ListView"><span class="nav-number">6.</span> <span class="nav-text">ListView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebView"><span class="nav-number">7.</span> <span class="nav-text">WebView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TabBarIOS"><span class="nav-number">8.</span> <span class="nav-text">TabBarIOS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigator"><span class="nav-number">9.</span> <span class="nav-text">Navigator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fetch"><span class="nav-number">10.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#封装一些开发中常用的组件状态、属性和方法"><span class="nav-number">11.</span> <span class="nav-text">封装一些开发中常用的组件状态、属性和方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vipcw</span>
+</div>
+
+
+<div class="powered-by">
+   <a class="theme-link" href="http://github.com/346865538">Vipcw&copy;</a> 版权所有
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="http://vipcw.online">
+    Vipcw
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"vipcw"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
