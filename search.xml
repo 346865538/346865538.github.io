@@ -66,16 +66,16 @@
 
     
     <entry>
-      <title><![CDATA[Node_createServer]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
-      <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
+      <title><![CDATA[Node_event]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_event%2F</url>
+      <content type="text"><![CDATA[事件：又称为发布订阅模式或者观察者模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748// var events = require(&quot;events&quot;).EventEmitter; // 旧写法var events = require(&quot;events&quot;); // 引入events模块var util = require(&quot;util&quot;);// 创建事件的发布者以及事件的观察者function Girl()&#123; // 假设女神饿了&#125;function Boy(name,response)&#123; this.name = name, this.response = response&#125;var goddess = new Girl(function()&#123; console.log(&quot;自己打电话叫外卖&quot;);&#125;);var boy1 = new Boy(&quot;备胎1&quot;,function()&#123; console.log(&quot;点饿了么&quot;);&#125;)var boy2 = new Boy(&quot;备胎2&quot;,function()&#123; console.log(&quot;上美团外卖&quot;);&#125;)var boy3 = new Boy(&quot;备胎3&quot;,function()&#123; console.log(&quot;上百度外卖&quot;);&#125;)util.inherits(Girl,events);// 继承来自于events的原型方法// 设置监听者的最大数goddess.setMaxListeners(2);// 只是绑定监听者goddess.on(&quot;ele&quot;,boy1.response);goddess.on(&quot;ele&quot;,boy2.response);goddess.addListener(&quot;ele&quot;,boy3.response);goddess.on(&quot;ele&quot;,function()&#123; console.log(&quot;自己叫外卖&quot;)&#125;);// once 绑定的事件只会触发一次goddess.once(&quot;ele&quot;,function()&#123; console.log(&quot;女神饿死了&quot;);&#125;);// 移除事件goddess.removeListener(&quot;ele&quot;,boy2.response);// 移除所有事件goddess.removeAllListeners(&quot;ele&quot;);// 发送事件(事件触发)goddess.emit(&quot;ele&quot;);]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[Node_stream]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_stream%2F</url>
-      <content type="text"><![CDATA[stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存var fs = require(“fs”); 复制文件123456789101112131415161718192021// 创建可读流// 每一个可读流具有data事件var rs = fs.createReadStream(&quot;1.jpg&quot;);// 创建可写流var ws = fs.createWriteStream(&quot;3.jpg&quot;);var times = 0;rs.on(&quot;data&quot;,function(chunk)&#123; // 把文件分割成64K 所以每64K会触发一次事件 times++; // console.log(times) // console.log(chunk) ws.write(chunk,function()&#123; console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;) &#125;)&#125;)rs.on(&quot;end&quot;,function()&#123; console.log(times);&#125;) 管道123var rs = fs.createReadStream(&quot;1.jpg&quot;);var ws = fs.createWriteStream(&quot;4.jpg&quot;);rs.pipe(ws);]]></content>
+      <title><![CDATA[Node_path]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_path%2F</url>
+      <content type="text"><![CDATA[path: 里面封装了一些对文件路径的操作 normalize 规范化字符串路径1234var path = require(&quot;path&quot;);var pathstr = &quot;a/b/./c/../d/f/./e&quot;;console.log(path.normalize(pathstr)); join 拼接路径123console.log(__dirname);console.log(path.join(__dirname,&quot;a&quot;,&quot;..b&quot;,&quot;..c/e/./d&quot;,&quot;test.txt&quot;)) resolve 将参数解析为绝对路径1console.log(path.resolve(&quot;www.baidu.com&quot;,&quot;a/..&quot;,&quot;n/..&quot;,&quot;text.html&quot;));]]></content>
     </entry>
 
     
@@ -87,9 +87,9 @@
 
     
     <entry>
-      <title><![CDATA[Node_event]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_event%2F</url>
-      <content type="text"><![CDATA[事件：又称为发布订阅模式或者观察者模式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748// var events = require(&quot;events&quot;).EventEmitter; // 旧写法var events = require(&quot;events&quot;); // 引入events模块var util = require(&quot;util&quot;);// 创建事件的发布者以及事件的观察者function Girl()&#123; // 假设女神饿了&#125;function Boy(name,response)&#123; this.name = name, this.response = response&#125;var goddess = new Girl(function()&#123; console.log(&quot;自己打电话叫外卖&quot;);&#125;);var boy1 = new Boy(&quot;备胎1&quot;,function()&#123; console.log(&quot;点饿了么&quot;);&#125;)var boy2 = new Boy(&quot;备胎2&quot;,function()&#123; console.log(&quot;上美团外卖&quot;);&#125;)var boy3 = new Boy(&quot;备胎3&quot;,function()&#123; console.log(&quot;上百度外卖&quot;);&#125;)util.inherits(Girl,events);// 继承来自于events的原型方法// 设置监听者的最大数goddess.setMaxListeners(2);// 只是绑定监听者goddess.on(&quot;ele&quot;,boy1.response);goddess.on(&quot;ele&quot;,boy2.response);goddess.addListener(&quot;ele&quot;,boy3.response);goddess.on(&quot;ele&quot;,function()&#123; console.log(&quot;自己叫外卖&quot;)&#125;);// once 绑定的事件只会触发一次goddess.once(&quot;ele&quot;,function()&#123; console.log(&quot;女神饿死了&quot;);&#125;);// 移除事件goddess.removeListener(&quot;ele&quot;,boy2.response);// 移除所有事件goddess.removeAllListeners(&quot;ele&quot;);// 发送事件(事件触发)goddess.emit(&quot;ele&quot;);]]></content>
+      <title><![CDATA[Node_stream]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_stream%2F</url>
+      <content type="text"><![CDATA[stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存var fs = require(“fs”); 复制文件123456789101112131415161718192021// 创建可读流// 每一个可读流具有data事件var rs = fs.createReadStream(&quot;1.jpg&quot;);// 创建可写流var ws = fs.createWriteStream(&quot;3.jpg&quot;);var times = 0;rs.on(&quot;data&quot;,function(chunk)&#123; // 把文件分割成64K 所以每64K会触发一次事件 times++; // console.log(times) // console.log(chunk) ws.write(chunk,function()&#123; console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;) &#125;)&#125;)rs.on(&quot;end&quot;,function()&#123; console.log(times);&#125;) 管道123var rs = fs.createReadStream(&quot;1.jpg&quot;);var ws = fs.createWriteStream(&quot;4.jpg&quot;);rs.pipe(ws);]]></content>
     </entry>
 
     
@@ -108,9 +108,16 @@
 
     
     <entry>
-      <title><![CDATA[Node_path]]></title>
-      <url>%2F2017%2F03%2F16%2FNode_path%2F</url>
-      <content type="text"><![CDATA[path: 里面封装了一些对文件路径的操作 normalize 规范化字符串路径1234var path = require(&quot;path&quot;);var pathstr = &quot;a/b/./c/../d/f/./e&quot;;console.log(path.normalize(pathstr)); join 拼接路径123console.log(__dirname);console.log(path.join(__dirname,&quot;a&quot;,&quot;..b&quot;,&quot;..c/e/./d&quot;,&quot;test.txt&quot;)) resolve 将参数解析为绝对路径1console.log(path.resolve(&quot;www.baidu.com&quot;,&quot;a/..&quot;,&quot;n/..&quot;,&quot;text.html&quot;));]]></content>
+      <title><![CDATA[Node_createServer]]></title>
+      <url>%2F2017%2F03%2F16%2FNode_require%2F</url>
+      <content type="text"><![CDATA[引入原生模块1var http = require(&quot;http&quot;); 加载自定义模块12// 引入本目录下的自定义模块要加上路径var home = require(&quot;./home.js&quot;); 非本目录下的自定义模块(按以下顺序)1234// 1.寻找本目录下node_modules目录下的home2.js// 2.寻找本目录下node_modules/home2目录下的index.js// 3.寻找本目录下node_modules/home2目录下的package.jsonvar home = require(&quot;home2&quot;);]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[ECMAScript6 入门]]></title>
+      <url>%2F2017%2F03%2F11%2FECMAScript6%20%E5%85%A5%E9%97%A8%2F</url>
+      <content type="text"><![CDATA[ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。 Babel ES6 在线转换工具]]></content>
     </entry>
 
     

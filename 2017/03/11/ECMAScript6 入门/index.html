@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Nodejs," />
+  <meta name="keywords" content="ECMAScript6," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Node_模块">
+<meta name="description" content="ECMAScript6 入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node_createServer">
-<meta property="og:url" content="http://yoursite.com/2017/03/16/Node_require/index.html">
+<meta property="og:title" content="ECMAScript6 入门">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/ECMAScript6 入门/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
-<meta property="og:description" content="Node_模块">
-<meta property="og:updated_time" content="2017-03-16T08:47:44.852Z">
+<meta property="og:description" content="ECMAScript6 入门">
+<meta property="og:updated_time" content="2017-04-14T12:39:19.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node_createServer">
-<meta name="twitter:description" content="Node_模块">
+<meta name="twitter:title" content="ECMAScript6 入门">
+<meta name="twitter:description" content="ECMAScript6 入门">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/16/Node_require/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/ECMAScript6 入门/"/>
 
 
 
 
 
-  <title> Node_createServer | Vipcw's Home </title>
+  <title> ECMAScript6 入门 | Vipcw's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/Node_require/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/ECMAScript6 入门/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Vipcw">
@@ -324,7 +324,7 @@
             
             
               
-                Node_createServer
+                ECMAScript6 入门
               
             
           </h1>
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T16:29:10+08:00">
-                2017-03-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T11:41:41+08:00">
+                2017-03-11
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/16/Node_require/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/16/Node_require/" itemprop="commentCount"></span>
+                <a href="/2017/03/11/ECMAScript6 入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/ECMAScript6 入门/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +396,7 @@
 
           
               <div class="post-description">
-                  Node_模块
+                  ECMAScript6 入门
               </div>
           
 
@@ -411,9 +411,9 @@
       
 
       
-        <h1 id="引入原生模块"><a href="#引入原生模块" class="headerlink" title="引入原生模块"></a>引入原生模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var http = require(&quot;http&quot;);</div></pre></td></tr></table></figure>
-<h1 id="加载自定义模块"><a href="#加载自定义模块" class="headerlink" title="加载自定义模块"></a>加载自定义模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 引入本目录下的自定义模块要加上路径</div><div class="line">var home = require(&quot;./home.js&quot;);</div></pre></td></tr></table></figure>
-<h1 id="非本目录下的自定义模块-按以下顺序"><a href="#非本目录下的自定义模块-按以下顺序" class="headerlink" title="非本目录下的自定义模块(按以下顺序)"></a>非本目录下的自定义模块(按以下顺序)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 1.寻找本目录下node_modules目录下的home2.js</div><div class="line">// 2.寻找本目录下node_modules/home2目录下的index.js</div><div class="line">// 3.寻找本目录下node_modules/home2目录下的package.json</div><div class="line">var home = require(&quot;home2&quot;);</div></pre></td></tr></table></figure>
+        <p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;evaluate=true&amp;lineWrap=false&amp;presets=es2015%2Creact%2Cstage-2&amp;targets=&amp;browsers=&amp;builtIns=false&amp;code=" target="_blank" rel="external">Babel ES6 在线转换工具</a></p>
+
       
     </div>
 
@@ -457,7 +457,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Nodejs/" rel="tag"># Nodejs</a>
+            <a href="/tags/ECMAScript6/" rel="tag"># ECMAScript6</a>
           
         </div>
       
@@ -470,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/11/ECMAScript6 入门/" rel="next" title="ECMAScript6 入门">
-                <i class="fa fa-chevron-left"></i> ECMAScript6 入门
+              <a href="/2017/03/11/Less/" rel="next" title="Less">
+                <i class="fa fa-chevron-left"></i> Less
               </a>
             
           </div>
@@ -480,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_buffer/" rel="prev" title="Node_buffer">
-                Node_buffer <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/16/Node_require/" rel="prev" title="Node_createServer">
+                Node_createServer <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -508,8 +508,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/16/Node_require/"
-           data-title="Node_createServer" data-url="http://yoursite.com/2017/03/16/Node_require/">
+      <div class="ds-thread" data-thread-key="2017/03/11/ECMAScript6 入门/"
+           data-title="ECMAScript6 入门" data-url="http://yoursite.com/2017/03/11/ECMAScript6 入门/">
       </div>
     
   </div>
@@ -532,17 +532,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -638,22 +629,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引入原生模块"><span class="nav-number">1.</span> <span class="nav-text">引入原生模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加载自定义模块"><span class="nav-number">2.</span> <span class="nav-text">加载自定义模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非本目录下的自定义模块-按以下顺序"><span class="nav-number">3.</span> <span class="nav-text">非本目录下的自定义模块(按以下顺序)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
