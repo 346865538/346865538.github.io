@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/11/ECMAScript6 入门/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
 <meta property="og:description" content="ECMAScript6 入门">
-<meta property="og:updated_time" content="2017-04-14T12:39:19.889Z">
+<meta property="og:updated_time" content="2017-04-14T14:55:33.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6 入门">
 <meta name="twitter:description" content="ECMAScript6 入门">
@@ -413,6 +413,31 @@
       
         <p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <p><a href="https://babeljs.io/repl/#?babili=false&amp;evaluate=true&amp;lineWrap=false&amp;presets=es2015%2Creact%2Cstage-2&amp;targets=&amp;browsers=&amp;builtIns=false&amp;code=" target="_blank" rel="external">Babel ES6 在线转换工具</a></p>
+<h1 id="for-of-循环"><a href="#for-of-循环" class="headerlink" title="for-of 循环"></a>for-of 循环</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var index of TestArray) &#123;</div><div class="line">  console.log(index);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>ES6 全新的迭代器概念 他允许我们在语言层面上定义一个序列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Test[Symbol.iterator] = function () &#123;</div><div class="line">  var keys = Object.keys(this).sort();</div><div class="line">  var index = 0;</div><div class="line"></div><div class="line">  return &#123;</div><div class="line">    next: function () &#123;</div><div class="line">      return &#123;</div><div class="line">        value: keys[index], done: index++ &gt;= keys.length</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="generator-函数-生成器"><a href="#generator-函数-生成器" class="headerlink" title="generator 函数 (生成器)"></a>generator 函数 (生成器)</h1><p>普通的JS函数被调用时，他们立刻运行，直到遇到return或抛出异常时才会停下来<br>而现在当你调用一个生成器时，他不会立即执行，而是返回一个已暂停的生成器对象(test)<br>每当你调用生成器对象的.next()方法时，函数调用将其自身解冻并一直运行到下一个yield表达式，再次暂停。</p>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// 创建一个生成器</div><div class="line">// 生成器函数使用function*声明</div><div class="line">function* TestFn(name) &#123;</div><div class="line">	yield &quot;Hello &quot; + name + &quot;!&quot;;</div><div class="line">	yield &quot;I&apos;m Generators&quot;;</div><div class="line">	yield &quot;see you later!&quot;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 调用生成器后，将返回的已暂停的生成器对象存放到变量中</div><div class="line">var test = TestFn(&quot;vipcw&quot;);</div><div class="line"></div><div class="line">// 每次调用生成器对象的.next()方法时，将其自身解冻并一直运行到下一个yield表达式，再次暂停。</div><div class="line">console.log(test.next())  // Hello vipcw!</div><div class="line">console.log(test.next())  // I&apos;m Generators</div><div class="line">console.log(test.next())  // see you later!</div></pre></td></tr></table></figure></p>
+<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="` 模板字符串"></a>` 模板字符串</h1><p>ES6中一种新的字面量语法 模板字符串<br>可以使用反撇号字符  ` 代替普通字符串的引号 ‘ 或 “ </p>
+<p>小栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function err(user, age) &#123;</div><div class="line">	// $&#123;user&#125;和$&#123;age&#125;被称为模板占位符</div><div class="line">    throw new Error(`你好， $&#123;user&#125;，年龄$&#123;age&#125; `);</div><div class="line">&#125;</div><div class="line"></div><div class="line">err(&quot;vipcw&quot;,&quot;18&quot;);   // Uncaught Error: 你好， vipcw，年龄18</div></pre></td></tr></table></figure></p>
+<p>模板字符串也可以多行书写<br>模板字符串中所有的内容都会原样输出在生成的字符串中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;#div1&apos;).innerHTML = `</div><div class="line">  &lt;h1&gt;你好!&lt;/h1&gt;</div><div class="line">  &lt;p&gt;Vipcw!&lt;/p&gt;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<h1 id="不定参数"><a href="#不定参数" class="headerlink" title="不定参数"></a>不定参数</h1><p>newArr前的省略号表明它是一个不定参数 所有传递进来的参数都被放到一个数组中并赋值给变量newArr</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Test(...TestArr) &#123;</div><div class="line">	console.log(TestArr)       // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</div><div class="line">	for (var value of TestArr) &#123;</div><div class="line">		console.log(value)</div><div class="line">		// a</div><div class="line">		// b</div><div class="line">		// c</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">Test(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</div></pre></td></tr></table></figure>
+<p>所有函数参数中，只有最后一个才可以被标记为不定参数，他之前的所有参数都正常填充，多余的参数被赋值给不定参数。如果没有多余的参数，不定参数就是一个空数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Test(a,...TestArr) &#123;</div><div class="line">	console.log(a)            // a</div><div class="line">	console.log(TestArr)       // [&quot;b&quot;, &quot;c&quot;]</div><div class="line">	for (var value of TestArr) &#123;</div><div class="line">		console.log(value)</div><div class="line">		// b</div><div class="line">		// c</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">Test(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</div></pre></td></tr></table></figure></p>
+<h1 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 如果调用时没有传递参数，将使用该表达式的值作为参数默认值</div><div class="line">function Test(a=&quot;xiaoming&quot;, b=&quot;xiaohong&quot;) &#123;</div><div class="line">    console.log(`xiaowang,$&#123;a&#125;,$&#123;b&#125;`);</div><div class="line">&#125;</div><div class="line">Test();                     // xiaowang,xiaoming,xiaohong</div><div class="line">Test(&quot;zhangsan&quot;,&quot;lisi&quot;);    // xiaowang,zhangsan,lisi</div></pre></td></tr></table></figure>
+<h1 id="Destructuring-解构"><a href="#Destructuring-解构" class="headerlink" title="Destructuring 解构"></a>Destructuring 解构</h1><p>解构赋值允许你使用类似数组或对象字面量的语法将数组和对象的属性赋给各种变量</p>
+<h2 id="数组的解构"><a href="#数组的解构" class="headerlink" title="数组的解构"></a>数组的解构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 使用相似的解构 可以将 a,b,c 3个变量分别赋值为 TestArray 的3个数值</div><div class="line">var TestArray = [1,2,3]</div><div class="line">var [a, b, c] = TestArray;</div><div class="line">console.log(a, b, c)        // 1  2  3</div><div class="line"></div><div class="line">var [a, b, c, d] = TestArray;</div><div class="line">console.log(a, b, c, d)        // 1  2  3  undefined</div><div class="line"></div><div class="line">// 还可以在对应位留空来跳过数组中的某些值</div><div class="line">var [,,c] = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];</div><div class="line">    console.log(c);   // c</div><div class="line">    </div><div class="line">// 通过不定参数的模式获取数组中&apos;多余&apos;的值</div></pre></td></tr></table></figure>
+<p>var [a, …TestArr] = [1, 2, 3, 4];<br>console.log(TestArr);   // [2, 3, 4]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 对象的解构</div></pre></td></tr></table></figure></p>
+<p>var x = { name: “zhangsan” };<br>var y = { name: “lisi” };<br>var { name: nameA } = x;<br>var { name: nameB } = y;<br>console.log(nameA);   // 张三<br>console.log(nameB);   // 李四<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">属性名与变量名一致时 还有一种简写</div></pre></td></tr></table></figure></p>
+<p>var { a, b } = { a: “zhangsan”, b: “lisi” };<br>console.log(a);   // “zhangsan”<br>console.log(b);   // “lisi”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Arrow Functions 箭头函数</div><div class="line">ES6 箭头函数：标识符=&gt;表达式</div><div class="line">箭头函数没有它自己的this值，箭头函数内的this值继承自外围作用域</div><div class="line">ES5 ES6 对比栗子：</div></pre></td></tr></table></figure>
+<p>// ES5<br>var Test = function(num){<br>    console.log(num)<br>}</p>
+<p>// ES6<br>var Test = (num)=&gt; console.log(num)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">箭头函数还可以包含一个块语句</div><div class="line">使用块语句的箭头函数不会自动返回值，需要使用return语句将值返回。</div><div class="line">使用箭头函数创建普通对象时，你总是需要将对象包裹在小括号里</div></pre></td></tr></table></figure></p>
+<p>// ES5<br>var Test = function(){<br>    a();<br>    b();<br>}</p>
+<p>// ES6<br>var Test = ()=&gt; {<br>    a();<br>    b();<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># Symbols</div><div class="line">ES6 之前 JS中一共有6种数据类型</div><div class="line">Undefined    未定义</div><div class="line">Null         空值</div><div class="line">Boolean      布尔类型</div><div class="line">Number       数字类型</div><div class="line">String       字符串类型</div><div class="line">Object       对象类型</div><div class="line"></div><div class="line">ES6 中引入了全新的第七种数据类型   symbol</div><div class="line">调用Symbol()创建一个新的symbol</div><div class="line">每一个symbol都独一无二，不与其它symbol等同，即使二者有相同的描述也不相等</div></pre></td></tr></table></figure></p>
+<p>var a = Symbol();<br>console.log(a);   // Symbol()<br>console.log(typeof(a))   // symbol<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">小栗子：</div></pre></td></tr></table></figure></p>
+<p>var name = Symbol();<br>var man = new Object();</p>
+<p>man[name] = “vipcw”;</p>
+<p>console.log(man[name]);   // vipcw<br>```</p>
 
       
     </div>
@@ -480,7 +505,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_require/" rel="prev" title="Node_createServer">
+              <a href="/2017/03/16/Node_createServer/" rel="prev" title="Node_createServer">
                 Node_createServer <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -532,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -629,6 +663,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#for-of-循环"><span class="nav-number">1.</span> <span class="nav-text">for-of 循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迭代器"><span class="nav-number">2.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#generator-函数-生成器"><span class="nav-number">3.</span> <span class="nav-text">generator 函数 (生成器)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板字符串"><span class="nav-number">4.</span> <span class="nav-text">` 模板字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不定参数"><span class="nav-number">5.</span> <span class="nav-text">不定参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#默认参数"><span class="nav-number">6.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Destructuring-解构"><span class="nav-number">7.</span> <span class="nav-text">Destructuring 解构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的解构"><span class="nav-number">7.1.</span> <span class="nav-text">数组的解构</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
