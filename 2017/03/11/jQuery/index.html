@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Nodejs," />
+  <meta name="keywords" content="jQuery," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="Node_流">
+<meta name="description" content="jQuery 常用方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node_stream">
-<meta property="og:url" content="http://yoursite.com/2017/03/16/Node_stream/index.html">
+<meta property="og:title" content="jQuery 常用方法">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/jQuery/index.html">
 <meta property="og:site_name" content="Vipcw's Home">
-<meta property="og:description" content="Node_流">
-<meta property="og:updated_time" content="2017-03-16T09:38:13.663Z">
+<meta property="og:description" content="jQuery 常用方法">
+<meta property="og:updated_time" content="2017-04-15T03:52:06.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node_stream">
-<meta name="twitter:description" content="Node_流">
+<meta name="twitter:title" content="jQuery 常用方法">
+<meta name="twitter:description" content="jQuery 常用方法">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/16/Node_stream/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/jQuery/"/>
 
 
 
 
 
-  <title> Node_stream | Vipcw's Home </title>
+  <title> jQuery 常用方法 | Vipcw's Home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/Node_stream/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/jQuery/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Vipcw">
@@ -324,7 +324,7 @@
             
             
               
-                Node_stream
+                jQuery 常用方法
               
             
           </h1>
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-16T16:29:10+08:00">
-                2017-03-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T11:41:41+08:00">
+                2017-03-11
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/16/Node_stream/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/16/Node_stream/" itemprop="commentCount"></span>
+                <a href="/2017/03/11/jQuery/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/jQuery/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +396,7 @@
 
           
               <div class="post-description">
-                  Node_流
+                  jQuery 常用方法
               </div>
           
 
@@ -411,9 +411,84 @@
       
 
       
-        <p>stream:流,他的出现时为了处理大数据 把一个大的文件截取成若干个大小为64k的小文件储存<br>var fs = require(“fs”);</p>
-<h1 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// 创建可读流</div><div class="line">// 每一个可读流具有data事件</div><div class="line">var rs = fs.createReadStream(&quot;1.jpg&quot;);</div><div class="line"></div><div class="line">// 创建可写流</div><div class="line">var ws = fs.createWriteStream(&quot;3.jpg&quot;);</div><div class="line"></div><div class="line">var times = 0;</div><div class="line">rs.on(&quot;data&quot;,function(chunk)&#123;</div><div class="line">    // 把文件分割成64K 所以每64K会触发一次事件</div><div class="line">    times++;</div><div class="line">    // console.log(times)</div><div class="line">    // console.log(chunk)</div><div class="line">    ws.write(chunk,function()&#123;</div><div class="line">        console.log(&quot;第&quot;+times+&quot;次chunk传入成功&quot;)</div><div class="line">    &#125;)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">rs.on(&quot;end&quot;,function()&#123;</div><div class="line">    console.log(times);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var rs = fs.createReadStream(&quot;1.jpg&quot;);</div><div class="line">var ws = fs.createWriteStream(&quot;4.jpg&quot;);</div><div class="line">rs.pipe(ws);</div></pre></td></tr></table></figure>
+        <p>jQuery 是一个 JavaScript 库。<br>jQuery 极大地简化了 JavaScript 编程。</p>
+<h1 id="隐藏显示"><a href="#隐藏显示" class="headerlink" title="隐藏显示"></a>隐藏显示</h1><pre><code>speed 的值为 slow normal fast 可以接受毫秒
+hide(speed,callback) 隐藏匹配的元素，speed为过度时间，callback为隐藏后要做的事（回调函数）
+show(speed,callback) 显示匹配的元素。
+toggle(speed,callback)方法来切换hide()和show()方法。如果隐藏则显示，如果显示则隐藏。
+</code></pre><h1 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h1><pre><code>fadeIn(speed,callback)用于淡入已隐藏的元素。
+fadeOut(speed,callback)用于淡出可见元素。
+fadeTo(speed,opacity,callback)该方法作用于透明度，（opacity:0-1,0时元素完全透明，显示效果为隐藏了，其实只是透明了，1为完全不透明）
+fadeToggle(speed,callback) 如果以淡出则添加淡入效果，如果以淡入则添加淡出效果。
+</code></pre><h1 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h1><pre><code>slideDown(speed,callback)用于向下滑动元素（首先元素必须是隐藏状态)。
+slideUp(spend,callback)用于向上滑动元素（首先元素必须是隐藏状态)。
+slideToggle(spend,callback)方法可以在slideDown()与slideUp()方法之间进行切换。如果向下滑动结束了，点击时就向上。
+</code></pre><h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><pre><code>animate({这里面是定义形成动画的css属性},speed,callback) 例如animate({right:&apos;350px’})移动到right为350px时停止。(需要定位)
+animate()-使用预定义的值:可以把属性的动画值设置为 &quot;show&quot;、&quot;hide&quot; 或 &quot;toggle”。
+animate()-使用队列功能:当给匹配元素多个animate()时，从上到下运行。
+</code></pre><h1 id="停止动画"><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h1><pre><code>stop(stopAll,goToEnd)。可选的 stopAll 参数规定是否应该清除动画队列,goToEnd 参数规定是否立即完成当前动画(默认都是false)。默认地，stop() 会清除在被选元素上指定的当前动画。
+</code></pre><h1 id="Callback函数"><a href="#Callback函数" class="headerlink" title="Callback函数"></a>Callback函数</h1><pre><code>函数在动画或者效果完成之后在运行：可以是声明的函数，也可以是匿名函数.
+</code></pre><h1 id="Chaining链接"><a href="#Chaining链接" class="headerlink" title="Chaining链接"></a>Chaining链接</h1><pre><code>Chaining 允许我们在一条语句中允许多个jQuery方法（在相同的元素上。 比如$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);&quot;p1&quot; 元素首先会变为红色，然后向上滑动，然后向下滑动：
+</code></pre><h1 id="设置和获得属性内容"><a href="#设置和获得属性内容" class="headerlink" title="设置和获得属性内容"></a>设置和获得属性内容</h1><pre><code>text(value/回调函数)-设置或返回所选元素的文本内容，   text和html 在获取元素的值的时候 都是获得的文本值 html设置值的时候 能解析标签
+html(value/回调函数)-设置或返回所选元素的内容(包括HTML标记).  
+val(value/回调函数)-设置或返回表单字段的值.  表单！！！！！！！
+attr(“属性名”,值) 例子 $(&quot;#w3s&quot;).attr(&quot;href&quot;,&quot;http://www.w3school.com.cn/jquery”);将id=w3s的元素的href值这是为http://www.w3school.com.cn/jquery；
+</code></pre><h1 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h1><h4 id="内部"><a href="#内部" class="headerlink" title="内部"></a>内部</h4><pre><code>append()在被选定元素的结尾插入内容。 例如 $(&quot;p&quot;).append(&quot;Some appended text.”);在p元素后面添加字符串 字符串也可以放在标签中一起插入。
+appendTo()添加到末尾
+prepend()在被选定元素的开头插入内容。用法同上    。
+prependTo()前端插入
+</code></pre><h4 id="外部"><a href="#外部" class="headerlink" title="外部"></a>外部</h4><pre><code>after() 方法在被选元素之后插入内容。    
+ insertAfter()添加到之后
+before() 方法在被选元素之前插入内容。
+insertBefore()添加到之前
+</code></pre><h1 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h1><pre><code>remove()删除被选元素(及其子元素)。  方法也可接受一个参数，允许您对被删元素进行过滤。 例如 $(&quot;p&quot;).remove(&quot;.italic&quot;);例子删除 class=&quot;italic&quot; 的所有 &lt;p&gt; 元素：
+empty()从被选元素中删除子元素。
+</code></pre><h1 id="获取并设置css类"><a href="#获取并设置css类" class="headerlink" title="获取并设置css类"></a>获取并设置css类</h1><pre><code>add()  例如 $(“div”).add(“p”).css(“color”,”red”); 设置匹配的div p元素的颜色
+addClass() - 向被选元素添加一个或多个类.
+removeClass() - 从被选元素删除一个或多个类
+hasClass()
+toggleClass() - 对被选元素进行添加/删除类的切换操作
+css() - css(&quot;propertyname&quot;)返回样式属性 设置css({&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...});
+</code></pre><h1 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h1><pre><code>width()方法设置或返回元素的宽度(不包括内边距、边框或外边距)
+height()方法设置或返回元素的高度(不包括内边距、边框或外边距)
+innerWidth()方法返回元素的宽度(包括内边距);
+innerHeight()方法返回元素高度(包括内边框);
+outerWidth(true) 方法返回元素的宽度（包括内边距、边框和外边距）。
+outerHeight(true) 方法返回元素的高度（包括内边距、边框和外边距）。
+offset() 返回第一个匹配元素相对于文档的位置.
+scrollLeft()设置或返回匹配元素相对滚动条左侧的偏移。(即滚动条离左边的距离)
+scrollTop()设置或返回匹配元素相对滚动条顶部的偏移(滚动条离顶部的距离)
+ position() 返回匹配相对于父级的位置 $(&quot;.inner&quot;).position().left 会受父级的padding影响
+</code></pre><h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><pre><code>parent() 方法返回被选元素的直接父元素
+parents()方法返回被选元素的所有祖先元素，一直到根元素(&lt;html&gt;) 例如$(&quot;span&quot;).parents(&quot;ul&quot;); 返回span所有的祖先并且是ul（往上找ul）
+parentsUntil()返回介于给定元素之间的所有祖先元素    $(&quot;span&quot;).parentsUntil(&quot;div&quot;);返回介于 &lt;span&gt; 与 &lt;div&gt; 元素之间的所有祖先元素。
+filter() - 过滤 $(“div).filter(“.span”)  在所有匹配的div元素中，匹配所有的 class=span 的标签.
+index() - 例如 $(this).index()  返回当前元素相对于同胞元素的索引值(index位置) ， 如果没找到元素 则返回-1
+</code></pre><h1 id="后代"><a href="#后代" class="headerlink" title="后代"></a>后代</h1><pre><code>children() 方法返回被选元素的所有直接子元素。
+find()方法返回被选元素的后代元素，一路向下直到最后一个后代。$(&quot;div&quot;).find(&quot;span”);返回属于div的后代并且是span（往下找span）find(“*”)表示返回所有后代.
+</code></pre><h1 id="选择器-eq-index-匹配等index个元素"><a href="#选择器-eq-index-匹配等index个元素" class="headerlink" title="选择器  :eq(index)  匹配等index个元素"></a>选择器  :eq(index)  匹配等index个元素</h1><pre><code>:gt(index)  匹配所有大于给定索引值的元素
+:lt(index)  匹配所有小于给定索引值的元素
+:header    匹配h1 h2 之类的标题元素
+:last()    获取最后一个元素
+:animated 匹配所有在执行动画的元素
+:focus    匹配当前获取焦点的元素
+$(“x &gt; y”) 匹配X的元素中的所有Y(子级)元素。
+$(“x + y”) 匹配所有跟在x后面的y元素
+</code></pre><h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><pre><code>unbind() 移除匹配元素事件处理器（用于移除用bind()绑定的事件处理程序）;
+hover(inFn,outFn),  //JQuery中的hover事件     inFn 代表移入时执行的函数  outFn代表移出时 执行的函数
+</code></pre><h1 id="访问对象"><a href="#访问对象" class="headerlink" title="访问对象"></a>访问对象</h1><pre><code>get(index); 方法返回匹配的第index元素
+</code></pre><h1 id="测试操作"><a href="#测试操作" class="headerlink" title="测试操作"></a>测试操作</h1><pre><code>$.contains(a,b)一个DOM节点是否包含另一个DOM节点。 b是否被a包住
+$.type(obj)检测obj的数据类型
+$.isArray(obj)检测是否为数组
+$.isFuciton(obj)用于检测对象是否为函数
+$.isEmptyObject(obj)测试对象是否是空对象（不包含任何属性）。
+$.isNumeric(value)检测参数是否为数值
+</code></pre><h1 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h1><pre><code>ev.currentTarget() 在事件冒泡阶段中的当前dom元素
+ev.pageX 显示鼠标距离可视窗口的左边的位置
+ev.pageY 顶部
+ev.result 返回当前事件 最后触发的那个处理函数的返回值(undefined 则不返回)
+</code></pre><h1 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h1><pre><code>$.trim() 去掉空格   (多用户input去空格)
+</code></pre>
       
     </div>
 
@@ -457,7 +532,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Nodejs/" rel="tag"># Nodejs</a>
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
           
         </div>
       
@@ -470,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/11/ECMAScript6 入门/" rel="next" title="ECMAScript6 入门">
-                <i class="fa fa-chevron-left"></i> ECMAScript6 入门
+              <a href="/2017/03/11/Less/" rel="next" title="Less">
+                <i class="fa fa-chevron-left"></i> Less
               </a>
             
           </div>
@@ -480,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/Node_path/" rel="prev" title="Node_path">
-                Node_path <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/11/ECMAScript6 入门/" rel="prev" title="ECMAScript6 入门">
+                ECMAScript6 入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -508,8 +583,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/16/Node_stream/"
-           data-title="Node_stream" data-url="http://yoursite.com/2017/03/16/Node_stream/">
+      <div class="ds-thread" data-thread-key="2017/03/11/jQuery/"
+           data-title="jQuery 常用方法" data-url="http://yoursite.com/2017/03/11/jQuery/">
       </div>
     
   </div>
@@ -648,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复制文件"><span class="nav-number">1.</span> <span class="nav-text">复制文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管道"><span class="nav-number">2.</span> <span class="nav-text">管道</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#隐藏显示"><span class="nav-number">1.</span> <span class="nav-text">隐藏显示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#淡入淡出"><span class="nav-number">2.</span> <span class="nav-text">淡入淡出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#滑动"><span class="nav-number">3.</span> <span class="nav-text">滑动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画"><span class="nav-number">4.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#停止动画"><span class="nav-number">5.</span> <span class="nav-text">停止动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Callback函数"><span class="nav-number">6.</span> <span class="nav-text">Callback函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chaining链接"><span class="nav-number">7.</span> <span class="nav-text">Chaining链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置和获得属性内容"><span class="nav-number">8.</span> <span class="nav-text">设置和获得属性内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加元素"><span class="nav-number">9.</span> <span class="nav-text">添加元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内部"><span class="nav-number">9.0.0.1.</span> <span class="nav-text">内部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#外部"><span class="nav-number">9.0.0.2.</span> <span class="nav-text">外部</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除元素"><span class="nav-number">10.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取并设置css类"><span class="nav-number">11.</span> <span class="nav-text">获取并设置css类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尺寸"><span class="nav-number">12.</span> <span class="nav-text">尺寸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历"><span class="nav-number">13.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后代"><span class="nav-number">14.</span> <span class="nav-text">后代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择器-eq-index-匹配等index个元素"><span class="nav-number">15.</span> <span class="nav-text">选择器  :eq(index)  匹配等index个元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件"><span class="nav-number">16.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问对象"><span class="nav-number">17.</span> <span class="nav-text">访问对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试操作"><span class="nav-number">18.</span> <span class="nav-text">测试操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件对象"><span class="nav-number">19.</span> <span class="nav-text">事件对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文档操作"><span class="nav-number">20.</span> <span class="nav-text">文档操作</span></a></li></ol></div>
             
 
           </div>
